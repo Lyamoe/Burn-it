@@ -1,0 +1,13 @@
+// * ========================================
+// * IMPORTS
+// * ========================================
+@use "Variables" as v;
+@use "Reset";
+
+body {
+    background-color: v.$background-white;
+}
+
+h1 {
+    color: v.$main-color;
+}
