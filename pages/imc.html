@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Burn It | Índice de Massa Corporal</title>
+		<title>Bunnit | Índice de Massa Corporal</title>
 	</head>
 	<body>
 		<h1>Índice de Massa Corporal (IMC)</h1>
@@ -36,8 +36,8 @@
 		<div id="resultado"></div>
 	</body>
 	<script>
-		document.querySelector("form").addEventListener("submit", function (e) {
-			e.preventDefault();
+		document.querySelector("form").addEventListener("submit", function (event) {
+			event.preventDefault();
 			const peso = parseFloat(document.getElementById("peso").value);
 			const altura = parseFloat(document.getElementById("altura").value) / 100; // Converter para metros
 

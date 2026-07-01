@@ -1,0 +1,82 @@
+.header {
+  background-color: #ca431a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 60px;
+  width: 100vw;
+  margin: 0;
+}
+.header * {
+  color: #fff;
+}
+.header__link {
+  text-decoration: none;
+}
+.header__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #ca431a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 100vw;
+  margin-top: 1rem;
+}
+.footer * {
+  color: #fff;
+}
+.footer__copyright {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+body {
+  background-color: #fffdfc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f0f0f;
+}
+
+.main {
+  min-height: calc(100vh - 120px - 48px);
+}
+
+.hero {
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../../assets/imgs/calculator.jpg") no-repeat center center/cover;
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+.hero__title {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  color: #a70000;
+}
+.hero__subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.link-box__item {
+  text-align: center;
+}
+.link-box__link {
+  display: block;
+  color: #0f0f0f;
+  text-decoration: none;
+  padding: 1.5rem;
+  border: 1px solid #ca431a;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.link-box__link:hover {
+  background-color: #ca431a;
+  color: #fffdfc;
+}

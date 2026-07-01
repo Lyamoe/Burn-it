@@ -1,0 +1,61 @@
+// * ========================================
+// * IMPORTS
+// * ========================================
+@use "Variables" as v;
+@use "Header";
+@use "Footer";
+
+// * ========================================
+// * STYLES
+// * ========================================
+body {
+	background-color: v.$background-white;
+	font-family: Arial, Helvetica, sans-serif;
+	color: v.$text-color-dark;
+}
+
+.main {
+	min-height: calc(100vh - v.$header-footer-height * 2 - 48px);
+}
+
+.hero {
+	background:
+		linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+		url("../../assets/imgs/calculator.jpg") no-repeat center center / cover;
+	text-align: center;
+	padding: 2rem;
+	margin: 2rem 0;
+
+	&__title {
+		font-size: 2rem;
+		font-weight: bolder;
+		margin-bottom: 1rem;
+		color: v.$secondary-color-dark;
+	}
+
+	&__subtitle {
+		font-size: 1.2rem;
+		margin-top: 0.5rem;
+	}
+}
+
+.link-box {
+	&__item {
+		text-align: center;
+	}
+
+	&__link {
+		display: block;
+		color: v.$text-color-dark;
+		text-decoration: none;
+		padding: 1.5rem;
+		border: 1px solid v.$main-color;
+		border-radius: 5px;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: v.$main-color;
+			color: v.$background-white;
+		}
+	}
+}

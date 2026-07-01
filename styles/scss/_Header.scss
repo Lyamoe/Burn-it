@@ -1,0 +1,28 @@
+// * ========================================
+// * IMPORTS
+// * ========================================
+@use "Variables" as v;
+
+.header {
+	background-color: v.$main-color;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1rem;
+    height: v.$header-footer-height;
+	width: 100vw;
+	margin: 0;
+
+	* {
+		color: #fff;
+	}
+
+	&__link {
+		text-decoration: none;
+	}
+
+	&__title {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+}

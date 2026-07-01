@@ -3,22 +3,88 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Burn it | Ajudando no emagrecimento</title>
-		<link rel="stylesheet" href="/styles/css/main.css">
+		<title>Bunnit | Ajudando no emagrecimento</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" href="/styles/css/reset.css" />
+		<link rel="stylesheet" href="/styles/css/index.css" />
 	</head>
 	<body>
-		<header>
-			<h1>Burn it!</h1>
-			<p>Calculadoras de calorias para ajudar no emagrecimento.</p>
+		<!-- * ======================================== -->
+		<!-- * HEADER -->
+		<!-- * ======================================== -->
+		<header class="header">
+			<a href="index.html" class="header__link">
+				<h1 class="header__title">Bunnit</h1>
+			</a>
+			<nav>
+				<ul class="nav nav-underline">
+					<li class="nav__item">
+						<a
+							class="nav__link nav__link--active nav-link active"
+							aria-current="page"
+							href="index.html"
+							>Início</a
+						>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link nav-link" href="#">Sobre</a>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link nav-link" href="#">Contato</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
-		<main>
-            <h2>Calculadoras</h2>
-			<a href="pages/limite-calorico.html">Limite calórico diário</a>
-			<a href="pages/imc.html">Índice de massa corporal</a>
-			<a href="pages/gordura.html">Gordura corporal</a>
+
+		<!-- * ======================================== -->
+		<!-- * MAIN -->
+		<!-- * ======================================== -->
+		<main class="main container">
+			<div class="hero">
+				<h2 class="hero__title">Calculadoras</h2>
+				<p class="hero__text">
+					Escolha uma de nossas ferramentas gratuitas abaixo para calcular suas
+					métricas de saúde e fitness de forma rápida e simples
+				</p>
+			</div>
+
+			<div class="link-box row align-items-center g-4">
+				<div class="link-box__item col-12 col-md-6">
+					<a class="link-box__link shadow-sm" href="pages/imc.html"
+						><h3 class="link-box-title h5 mt-2">
+							Índice de Massa Corporal (IMC)
+						</h3>
+						<p class="link-box-text small">
+							Descubra rapidamente se o seu peso está em uma faixa saudável.
+						</p></a
+					>
+				</div>
+				<div class="link-box__item col-12 col-md-6">
+					<a class="link-box__link shadow-sm" href="pages/gordura.html">
+						<h3 class="link-box-title h5 mt-2">
+							Porcentagem de Gordura Corporal
+						</h3>
+						<p class="link-box-text small">
+							Descubra a porcentagem de gordura em seu corpo.
+						</p>
+					</a>
+				</div>
+			</div>
 		</main>
-        <footer>
-            <p>© 2026 Burn-it. Todos os direitos reservados.</p>
-        </footer>
+		<!-- * ======================================== -->
+		<!-- * FOOTER -->
+		<!-- * ======================================== -->
+		<footer class="footer">
+			<p class="footer__copyright">
+				© 2026 Bunnit. Todos os direitos reservados.
+			</p>
+		</footer>
 	</body>
 </html>

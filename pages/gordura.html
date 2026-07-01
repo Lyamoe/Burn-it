@@ -1,11 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burn It | Gordura Corporal</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bunnit | Gordura Corporal</title>
+        <link rel="stylesheet" href="/styles/css/main.css">
+	</head>
+	<body>
+		<h1>Gordura Corporal</h1>
+		<form>
+			<select id="sexo" nome="sexo" required>
+                <option value="feminino" selected>Feminino</option>
+				<option value="masculino">Masculino</option>
+			</select>
+
+			<label for="altura">Altura (cm):</label>
+			<input
+				type="number"
+				id="altura"
+				name="altura"
+				min="50"
+				step="1"
+				max="260"
+				required
+			/>
+
+			<label for="pescoco">Pescoco (cm):</label>
+			<input
+				type="number"
+				id="pescoco"
+				name="pescoco"
+				min="10"
+				step="0.1"
+				max="60"
+				required
+			/>
+
+			<label for="cintura">Cintura (cm):</label>
+			<input
+				type="number"
+				id="cintura"
+				name="cintura"
+				min="20"
+				step="0.1"
+				max="200"
+				required
+			/>
+
+			<label for="quadril">Quadril (cm):</label>
+			<input
+				type="number"
+				id="quadril"
+				name="quadril"
+				min="20"
+				step="0.1"
+				max="200"
+				required
+			/>
+			<button type="submit">Calcular Gordura Corporal</button>
+		</form>
+
+		<div id="resultado"></div>
+	</body>
+
+    <script>
+        document.getElementById("sexo").addEventListener("change", function () {
+            const quadrilInput = document.getElementById("quadril");
+            const quadrilLabel = document.querySelector('label[for="quadril"]');
+
+            if (this.value === "masculino") {
+                quadrilInput.style.display = "none";
+                quadrilLabel.style.display = "none";
+            } else {
+                quadrilInput.style.display = "block";
+                quadrilLabel.style.display = "block";
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const sexo = document.getElementById("sexo").value;
+            const altura = parseFloat(document.getElementById("altura").value);
+            const pescoco = parseFloat(document.getElementById("pescoco").value);
+            const cintura = parseFloat(document.getElementById("cintura").value);
+            const quadril = parseFloat(document.getElementById("quadril").value);
+
+            let gorduraCorporal;
+
+            if (sexo === "masculino") {
+                gorduraCorporal =
+                    (495 / (1.0324 - 0.19077 * Math.log10(cintura - pescoco) + 0.15456 * Math.log10(altura))) - 450;
+            } else {
+                gorduraCorporal =
+                    (495 / (1.29579 - 0.35004 * Math.log10(cintura + quadril - pescoco) + 0.22100 * Math.log10(altura))) - 450;
+            }
+
+            document.getElementById("resultado").textContent =
+                "Gordura Corporal: " + gorduraCorporal.toFixed(2) + "%";
+        });
+    </script>
 </html>

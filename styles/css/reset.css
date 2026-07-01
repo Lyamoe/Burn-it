@@ -220,11 +220,3 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
-
-body {
-  background-color: #fffdfc;
-}
-
-h1 {
-  color: #ca431a;
-}

@@ -1,0 +1,24 @@
+// * ========================================
+// * IMPORTS
+// * ========================================
+@use "Variables" as v;
+
+.footer {
+    background-color: v.$main-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: v.$header-footer-height;
+    width: 100vw;
+    margin-top: 1rem;
+
+    * {
+        color: #fff;
+    }
+
+    &__copyright {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0.5rem;
+    }
+}
