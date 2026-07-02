@@ -4,21 +4,16 @@
 @use "Variables" as v;
 
 .footer {
-    background-color: v.$main-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: v.$header-footer-height;
-    width: 100vw;
-    margin-top: 1rem;
+	background-color: v.$main-color;
+	height: v.$footer-height;
+	width: 100vw;
+	margin-top: 1rem;
+	text-align: center;
+	padding: 1rem;
+	font-size: 0.9rem;
+	color: #fff;
 
-    * {
-        color: #fff;
-    }
-
-    &__copyright {
-        font-size: 0.9rem;
-        text-align: center;
-        padding: 0.5rem;
+    &__link, &__email {
+        color: v.$text-color-light;
     }
 }

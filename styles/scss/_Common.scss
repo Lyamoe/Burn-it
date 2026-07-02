@@ -1,0 +1,17 @@
+// * ========================================
+// * IMPORTS
+// * ========================================
+@use "Variables" as v;
+
+// * ========================================
+// * STYLES
+// * ========================================
+body {
+	background-color: v.$background-white;
+	font-family: Arial, Helvetica, sans-serif;
+	color: v.$text-color-dark;
+}
+
+.content-wrapper {
+	min-height: calc(100vh - v.$header-height - v.$footer-height - 48px);
+}

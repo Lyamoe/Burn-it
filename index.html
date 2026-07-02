@@ -3,7 +3,22 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bunnit | Ajudando no emagrecimento</title>
+		<meta
+			name="description"
+			content="Calcule seu IMC e porcentagem de gordura corporal gratuitamente no Bunnit. Ferramentas rápidas e científicas para te ajudar no emagrecimento."
+		/>
+		<meta property="og:title" content="Bunnit | Ajudando no emagrecimento" />
+		<meta
+			property="og:description"
+			content="Ferramentas gratuitas para calcular suas métricas de saúde e fitness."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="#" />
+		<!--TODO: Replace with your actual URL -->
+		<meta property="og:image" content="#" />
+		<!--TODO: Replace with site logo image URL -->
+
+		<title>Calculadoras de Saúde e Fitness Grátis | Bunnit</title>
 
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -11,9 +26,10 @@
 			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
 			crossorigin="anonymous"
 		/>
-
-		<link rel="stylesheet" href="/styles/css/reset.css" />
-		<link rel="stylesheet" href="/styles/css/index.css" />
+		<link rel="canonical" href="#" />
+		<!--TODO: Replace with your actual URL -->
+		<link rel="stylesheet" href="./styles/css/reset.css" />
+		<link rel="stylesheet" href="./styles/css/index.css" />
 	</head>
 	<body>
 		<!-- * ======================================== -->
@@ -21,23 +37,23 @@
 		<!-- * ======================================== -->
 		<header class="header">
 			<a href="index.html" class="header__link">
-				<h1 class="header__title">Bunnit</h1>
+				<p class="header__title">Bunnit</p>
 			</a>
 			<nav>
-				<ul class="nav nav-underline">
-					<li class="nav__item">
+				<ul class="site-nav nav nav-underline">
+					<li class="site-nav__item">
 						<a
-							class="nav__link nav__link--active nav-link active"
+							class="site-nav__link site-nav__link--active nav-link active"
 							aria-current="page"
 							href="index.html"
 							>Início</a
 						>
 					</li>
-					<li class="nav__item">
-						<a class="nav__link nav-link" href="#">Sobre</a>
+					<li class="site-nav__item">
+						<a class="site-nav__link nav-link" href="#">Sobre</a>
 					</li>
-					<li class="nav__item">
-						<a class="nav__link nav-link" href="#">Contato</a>
+					<li class="site-nav__item">
+						<a class="site-nav__link nav-link" href="#">Contato</a>
 					</li>
 				</ul>
 			</nav>
@@ -46,37 +62,66 @@
 		<!-- * ======================================== -->
 		<!-- * MAIN -->
 		<!-- * ======================================== -->
-		<main class="main container">
+		<main class="content-wrapper container">
 			<div class="hero">
-				<h2 class="hero__title">Calculadoras</h2>
-				<p class="hero__text">
-					Escolha uma de nossas ferramentas gratuitas abaixo para calcular suas
-					métricas de saúde e fitness de forma rápida e simples
+				<h1 class="hero__title">Calculadoras de Saúde e Fitness</h1>
+				<p class="hero__subtitle">
+					Escolha uma de nossas ferramentas abaixo para calcular suas métricas
+					de saúde e fitness de forma rápida e simples
 				</p>
 			</div>
 
-			<div class="link-box row align-items-center g-4">
+			<!-- * ---------- Link das calculadoras ---------- -->
+			<section class="link-box row align-items-center g-4">
 				<div class="link-box__item col-12 col-md-6">
-					<a class="link-box__link shadow-sm" href="pages/imc.html"
-						><h3 class="link-box-title h5 mt-2">
+					<a class="link-box__link" href="pages/imc.html"
+						><h2 class="link-box__title h5 mt-2">
 							Índice de Massa Corporal (IMC)
-						</h3>
-						<p class="link-box-text small">
+						</h2>
+						<p class="link-box__text small">
 							Descubra rapidamente se o seu peso está em uma faixa saudável.
 						</p></a
 					>
 				</div>
 				<div class="link-box__item col-12 col-md-6">
-					<a class="link-box__link shadow-sm" href="pages/gordura.html">
-						<h3 class="link-box-title h5 mt-2">
+					<a class="link-box__link" href="pages/gordura.html">
+						<h2 class="link-box__title h5 mt-2">
 							Porcentagem de Gordura Corporal
-						</h3>
-						<p class="link-box-text small">
+						</h2>
+						<p class="link-box__text small">
 							Descubra a porcentagem de gordura em seu corpo.
 						</p>
 					</a>
 				</div>
-			</div>
+			</section>
+
+			<!-- * ---------- Como funciona ---------- -->
+			<section class="how-it-works shadow-sm">
+				<h2 class="how-it-works__title">Como funciona</h2>
+				<div class="how-it-works__text row g-3">
+					<p class="how-it-works__text-item col-12 col-md-4">
+						<strong class="how-it-works__topic-title">Rápido</strong>
+						<br />
+						Basta inserir seus dados básicos e o Bunnit calcula suas métricas
+						instantaneamente, entregando o resultado na sua tela em poucos
+						segundos.
+					</p>
+					<p class="how-it-works__text-item col-12 col-md-4">
+						<strong class="how-it-works__topic-title">Científico</strong>
+						<br />
+						Nossas ferramentas utilizam fórmulas matemáticas consagradas e
+						validadas pela comunidade de saúde, garantindo cálculos precisos
+						para sua evolução.
+					</p>
+					<p class="how-it-works__text-item col-12 col-md-4">
+						<strong class="how-it-works__topic-title">Prático</strong>
+						<br />
+						Monitore sua saúde de onde estiver, quando quiser. No Bunnit, você
+						tem acesso livre a todas as calculadoras sem precisar preencher
+						formulários longos ou criar uma conta.
+					</p>
+				</div>
+			</section>
 		</main>
 		<!-- * ======================================== -->
 		<!-- * FOOTER -->
@@ -85,6 +130,17 @@
 			<p class="footer__copyright">
 				© 2026 Bunnit. Todos os direitos reservados.
 			</p>
+			<address class="footer__address">
+				<p>
+					Desenvolvido por
+					<a class="footer__email" href="https://lyamoe.github.io/Lyamoe/"
+						>Lyamoe</a
+					>
+				</p>
+				<a class="footer__link" href="mailto:lyamoesp@gmail.com"
+					>lyamoesp@gmail.com</a
+				>
+			</address>
 		</footer>
 	</body>
 </html>

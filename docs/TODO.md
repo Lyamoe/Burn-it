@@ -8,7 +8,7 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 
 * [x] Add a Navigation Bar (Home | About | Contact)
 * [x] A Hero Section Subtitle or Intro
-* [ ] "How it Works" Section:
+* [x] "How it Works" Section:
   * Column 1: Fast (Results in seconds)
   * Column 2: Scientific (Scientific formulas such as Harris-Benedict and U.S. Navy)
   * Column 3: Free (Access from anywhere without registration)
@@ -38,5 +38,5 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 ## Fixes & Refactoring
 
 * [ ] Refactor Main Layout CSS (index.scss):
-  * [ ] Eliminate the 48px magic number on line 18.
+  * [ ] Eliminate the 48px magic number on line 18 of index.scss (content-wrapper).
 * [ ] JS Architecture (Separation of Concerns): Separate purely mathematical functions (logic layer) from functions that modify the HTML (UI layer).

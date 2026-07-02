@@ -2,22 +2,13 @@
 // * IMPORTS
 // * ========================================
 @use "Variables" as v;
+@use "Common";
 @use "Header";
 @use "Footer";
 
 // * ========================================
 // * STYLES
 // * ========================================
-body {
-	background-color: v.$background-white;
-	font-family: Arial, Helvetica, sans-serif;
-	color: v.$text-color-dark;
-}
-
-.main {
-	min-height: calc(100vh - v.$header-footer-height * 2 - 48px);
-}
-
 .hero {
 	background:
 		linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
@@ -34,7 +25,7 @@ body {
 	}
 
 	&__subtitle {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		margin-top: 0.5rem;
 	}
 }
@@ -44,6 +35,9 @@ body {
 		text-align: center;
 	}
 
+	&__title {
+		transition: color 0.3s ease; /* Keeps the color swap smooth */
+	}
 	&__link {
 		display: block;
 		color: v.$text-color-dark;
@@ -51,11 +45,40 @@ body {
 		padding: 1.5rem;
 		border: 1px solid v.$main-color;
 		border-radius: 5px;
-		transition: background-color 0.3s ease;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
 
 		&:hover {
 			background-color: v.$main-color;
-			color: v.$background-white;
+			color: v.$text-color-light;
+
+			.link-box__title {
+				color: v.$tertiary-color;
+			}
 		}
+	}
+}
+
+.how-it-works {
+	background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, v.$secondary-color-light 100%);
+	padding: 2rem;
+	margin: 2rem 0;
+	border-radius: 5px;
+
+	&__title {
+		font-size: 1.5rem;
+		font-weight: bolder;
+		margin-bottom: 1rem;
+		color: v.$secondary-color-dark;
+	}
+
+	&__text-item {
+		font-size: 1rem;
+	}
+
+	&__topic-title {
+		font-weight: bold;
+		color: v.$call-to-action-color;
 	}
 }
