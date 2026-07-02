@@ -1,5 +1,15 @@
+body {
+  background-color: #fffdfc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f0f0f;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 60px - 100px - 48px);
+}
+
 .header {
-  background-color: #ca431a;
+  background-color: #1D3354;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,32 +29,28 @@
   font-weight: bold;
 }
 
+.site-nav__link {
+  color: #E9FFF9 !important;
+}
+.site-nav__link:hover {
+  color: #ee2c32 !important;
+}
+.site-nav__link--active {
+  color: #ee2c32 !important;
+}
+
 .footer {
-  background-color: #ca431a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
+  background-color: #1D3354;
+  height: 100px;
   width: 100vw;
   margin-top: 1rem;
-}
-.footer * {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
   color: #fff;
 }
-.footer__copyright {
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-body {
-  background-color: #fffdfc;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #0f0f0f;
-}
-
-.main {
-  min-height: calc(100vh - 120px - 48px);
+.footer__link, .footer__email {
+  color: #E9FFF9;
 }
 
 .hero {
@@ -57,26 +63,52 @@ body {
   font-size: 2rem;
   font-weight: bolder;
   margin-bottom: 1rem;
-  color: #a70000;
+  color: #145d96;
 }
 .hero__subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
 
 .link-box__item {
   text-align: center;
 }
+.link-box__title {
+  transition: color 0.3s ease; /* Keeps the color swap smooth */
+}
 .link-box__link {
   display: block;
   color: #0f0f0f;
   text-decoration: none;
   padding: 1.5rem;
-  border: 1px solid #ca431a;
+  border: 1px solid #1D3354;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .link-box__link:hover {
-  background-color: #ca431a;
-  color: #fffdfc;
+  background-color: #1D3354;
+  color: #E9FFF9;
+}
+.link-box__link:hover .link-box__title {
+  color: #ffaf7a;
+}
+
+.how-it-works {
+  background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, #9ED8DB 100%);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+}
+.how-it-works__title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  color: #145d96;
+}
+.how-it-works__text-item {
+  font-size: 1rem;
+}
+.how-it-works__topic-title {
+  font-weight: bold;
+  color: #ee2c32;
 }
