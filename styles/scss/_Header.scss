@@ -4,33 +4,30 @@
 @use "Variables" as v;
 
 .header {
-	background-color: v.$main-color;
+	background-color: v.$main-blue-color;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 1rem;
+	padding: 0 v.$container-padding-side;
 	height: v.$header-height;
 	width: 100vw;
 	margin: 0;
-
-	* {
-		color: #fff;
-	}
+	color: v.$main-white-color;
 
 	&__title {
 		font-size: 1.5rem;
-		font-weight: bold;
+		font-weight: v.$font-weight-bold;
 	}
 
 	&__nav {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
+		gap: v.$gap-small;
 	}
 
 	&__link {
 		text-decoration: none;
-		color: v.$text-color-light;
+		color: v.$baby-blue-color;
 
 		&:hover {
 			color: v.$call-to-action-color;
@@ -41,5 +38,11 @@
 			padding-bottom: 0.5rem;
 			border-bottom: 2px solid v.$call-to-action-color;
 		}
+	}
+}
+
+@media (max-width: 450px) {
+	.header {
+		padding: 0 v.$container-padding-side-mobile;
 	}
 }

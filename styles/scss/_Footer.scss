@@ -4,7 +4,7 @@
 @use "Variables" as v;
 
 .footer {
-	background-color: v.$main-color;
+	background-color: v.$main-blue-color;
 	height: v.$footer-height;
 	width: 100vw;
 	margin-top: 1rem;
@@ -14,6 +14,6 @@
 	color: #fff;
 
     &__link, &__email {
-        color: v.$text-color-light;
+        color: v.$baby-blue-color;
     }
 }

@@ -14,71 +14,81 @@
 		linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
 		url("../../assets/imgs/calculator.jpg") no-repeat center center / cover;
 	text-align: center;
-	padding: 2rem;
+	padding: v.$padding-medium;
 	margin: 2rem 0;
 
 	&__title {
-		font-size: 2rem;
-		font-weight: bolder;
+		font-size: v.$font-size-title;
+		font-weight: v.$font-weight-bold;
 		margin-bottom: 1rem;
-		color: v.$secondary-color-dark;
+		color: v.$vivid-blue-color;
 	}
 
 	&__subtitle {
-		font-size: 1rem;
+		font-size: v.$font-size-medium;
 		margin-top: 0.5rem;
 	}
 }
 
 .link-box {
+	@include v.custom-grid;
+
 	&__item {
 		text-align: center;
 	}
 
 	&__title {
-		transition: color 0.3s ease; /* Keeps the color swap smooth */
+		font-size: v.$font-size-large;
+		margin-bottom: 0.5rem;
+		transition: color v.$smooth-transition;
 	}
+
 	&__link {
 		display: block;
-		color: v.$text-color-dark;
+		color: v.$main-black-color;
 		text-decoration: none;
-		padding: 1.5rem;
-		border: 1px solid v.$main-color;
+		padding: v.$padding-medium;
+		border: 1px solid v.$main-blue-color;
 		border-radius: 5px;
 		transition:
-			background-color 0.3s ease,
-			color 0.3s ease;
+			background-color v.$smooth-transition,
+			color v.$smooth-transition;
 
 		&:hover {
-			background-color: v.$main-color;
-			color: v.$text-color-light;
+			background-color: v.$main-blue-color;
+			color: v.$baby-blue-color;
 
 			.link-box__title {
-				color: v.$tertiary-color;
+				color: v.$peach-color;
 			}
 		}
+	}
+
+	&__text {
+		font-size: v.$font-size-small;
 	}
 }
 
 .how-it-works {
-	background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, v.$secondary-color-light 100%);
-	padding: 2rem;
+	background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, v.$light-blue-color 100%);
+	padding: v.$padding-medium;
 	margin: 2rem 0;
+	box-shadow: -5px 5px 6px rgba(0, 0, 0, 0.03);
 	border-radius: 5px;
 
-	&__title {
-		font-size: 1.5rem;
-		font-weight: bolder;
-		margin-bottom: 1rem;
-		color: v.$secondary-color-dark;
+	&__text-box {
+		@include v.custom-grid(3);
 	}
 
-	&__text-item {
-		font-size: 1rem;
+	&__title {
+		font-size: v.$font-size-large;
+		font-weight: v.$font-weight-bold;
+		margin-bottom: 1rem;
+		color: v.$vivid-blue-color;
 	}
 
 	&__topic-title {
-		font-weight: bold;
+		font-weight: v.$font-weight-bold;
 		color: v.$call-to-action-color;
 	}
 }

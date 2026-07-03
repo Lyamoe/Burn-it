@@ -7,11 +7,22 @@
 // * STYLES
 // * ========================================
 body {
-	background-color: v.$background-white;
+	background-color: v.$main-white-color;
 	font-family: Arial, Helvetica, sans-serif;
-	color: v.$text-color-dark;
+	color: v.$main-black-color;
+	font-size: v.$font-size-medium;
 }
 
 .content-wrapper {
+	padding: 0 v.$container-padding-side-mobile;
 	min-height: calc(100vh - v.$header-height - v.$footer-height - 48px);
+	width: 100vw;
+	max-width: v.$container-max-width;
+	margin: 0 auto;
+}
+
+@media (min-width: v.$screen-breakpoint-medium) {
+	.content-wrapper {
+		padding: 0 v.$container-padding-side;
+	}
 }
