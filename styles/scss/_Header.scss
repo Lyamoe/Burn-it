@@ -17,26 +17,29 @@
 		color: #fff;
 	}
 
-	&__link {
-		text-decoration: none;
-	}
-
 	&__title {
 		font-size: 1.5rem;
 		font-weight: bold;
 	}
-}
 
-.site-nav {
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
 	&__link {
-		color: v.$text-color-light !important;
+		text-decoration: none;
+		color: v.$text-color-light;
 
 		&:hover {
-			color: v.$call-to-action-color !important;
+			color: v.$call-to-action-color;
 		}
 
 		&--active {
-			color: v.$call-to-action-color !important;
+			color: v.$call-to-action-color;
+			padding-bottom: 0.5rem;
+			border-bottom: 2px solid v.$call-to-action-color;
 		}
 	}
 }

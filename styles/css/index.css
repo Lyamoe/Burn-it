@@ -21,22 +21,26 @@ body {
 .header * {
   color: #fff;
 }
-.header__link {
-  text-decoration: none;
-}
 .header__title {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-.site-nav__link {
-  color: #E9FFF9 !important;
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.site-nav__link:hover {
-  color: #ee2c32 !important;
+.header__link {
+  text-decoration: none;
+  color: #E9FFF9;
 }
-.site-nav__link--active {
-  color: #ee2c32 !important;
+.header__link:hover {
+  color: #ee2c32;
+}
+.header__link--active {
+  color: #ee2c32;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ee2c32;
 }
 
 .footer {
