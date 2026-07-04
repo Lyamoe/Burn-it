@@ -22,15 +22,15 @@
 		display: flex;
 		align-items: center;
 		gap: v.$gap-small;
+
+		& .header__link:hover {
+        color: v.$call-to-action-color;
+    }
 	}
 
 	&__link {
 		text-decoration: none;
 		color: v.$baby-blue-color;
-
-		&:hover {
-			color: v.$call-to-action-color;
-		}
 
 		&--active {
 			color: v.$call-to-action-color;

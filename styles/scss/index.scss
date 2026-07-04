@@ -1,6 +1,7 @@
 // * ========================================
 // * IMPORTS
 // * ========================================
+@use "Reset";
 @use "Variables" as v;
 @use "Common";
 @use "Header";
@@ -12,7 +13,7 @@
 .hero {
 	background:
 		linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-		url("../../assets/imgs/calculator.jpg") no-repeat center center / cover;
+		url("../../assets/images/index-hero-calculator.jpg") no-repeat center center / cover;
 	text-align: center;
 	padding: v.$padding-medium;
 	margin: 2rem 0;

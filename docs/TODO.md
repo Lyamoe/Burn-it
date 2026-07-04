@@ -8,10 +8,7 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 
 * [x] Add a Navigation Bar (Home | About | Contact)
 * [x] A Hero Section Subtitle or Intro
-* [x] "How it Works" Section:
-  * Column 1: Fast (Results in seconds)
-  * Column 2: Scientific (Scientific formulas such as Harris-Benedict and U.S. Navy)
-  * Column 3: Free (Access from anywhere without registration)
+* [x] "How it Works" Section
 * [ ] FAQ Section at the Bottom
 
 ### Calculator Suite & Categories
