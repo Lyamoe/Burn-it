@@ -39,12 +39,7 @@
 						<a class="header__link" href="../index.html">Início</a>
 					</li>
 					<li class="header__item">
-						<a
-							class="header__link header__link--active"
-							aria-current="page"
-							href="../index.html#how-it-works"
-							>Sobre</a
-						>
+						<a class="header__link" href="../index.html#how-it-works">Sobre</a>
 					</li>
 					<li class="header__item">
 						<a class="header__link" href="#contact">Contato</a>
@@ -72,37 +67,64 @@
 			</section>
 
 			<section class="calculator">
-				<form id="imc-form" class="calculator__form">
-					<label for="peso" class="calculator__label">Peso (kg):</label>
-					<input
-						type="number"
-						id="peso"
-						class="calculator__number-input"
-						name="peso"
-						min="20"
-						step="0.1"
-						max="400"
-						required
-					/>
+				<form id="imc-form" class="calculator__form" novalidate>
+					<div class="calculator__input-box">
+						<label for="peso" class="calculator__label">Peso (kg):</label>
+						<input
+							type="number"
+							id="peso"
+							class="calculator__number-input"
+							name="peso"
+							min="20"
+							step="0.1"
+							max="400"
+							required
+						/>
+					</div>
 
-					<label for="altura" class="calculator__label">Altura (cm):</label>
-					<input
-						type="number"
-						id="altura"
-						class="calculator__number-input"
-						name="altura"
-						min="50"
-						step="1"
-						max="260"
-						required
-					/>
+					<div class="calculator__input-box">
+						<label for="altura" class="calculator__label">Altura (cm):</label>
+						<input
+							type="number"
+							id="altura"
+							class="calculator__number-input"
+							name="altura"
+							min="50"
+							step="1"
+							max="260"
+							required
+						/>
+					</div>
 
 					<button type="submit" class="calculator__submit">Calcular IMC</button>
 				</form>
+				<div id="error" class="calculator__error-message">
+					<p class="calculator__error-text">O valor xxx é inválido</p>
+				</div>
+				<div id="resultado" class="calculator__result"></div>
 			</section>
-
-			<div id="resultado" class="calculator__result"></div>
 		</main>
+
+		<!-- * ======================================== -->
+		<!-- * FOOTER -->
+		<!-- * ======================================== -->
+		<footer class="footer">
+			<p class="footer__copyright">
+				© 2026 Bunnit. Todos os direitos reservados.
+			</p>
+			<address id="contact" class="footer__address">
+				<p>
+					Desenvolvido por
+					<a class="footer__email" href="https://lyamoe.github.io/Lyamoe/"
+						>Lyamoe</a
+					>
+				</p>
+				<a class="footer__link" href="mailto:lyamoesp@gmail.com"
+					>lyamoesp@gmail.com</a
+				>
+			</address>
+		</footer>
+
 		<script type="module">
 			import { initIMCController } from "../scripts/imcController.js";
 			document.addEventListener("DOMContentLoaded", initIMCController);

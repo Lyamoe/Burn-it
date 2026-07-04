@@ -6,7 +6,7 @@
 .footer {
 	background-color: v.$main-blue-color;
 	height: v.$footer-height;
-	margin-top: 1rem;
+	margin-top: v.$margin-small;
 	text-align: center;
 	padding: v.$padding-small;
 	font-size: v.$font-size-small;

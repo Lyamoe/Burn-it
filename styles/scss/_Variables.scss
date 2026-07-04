@@ -7,10 +7,12 @@ $main-blue-color: #1d3354;
 $main-black-color: #0f0f0f;
 $main-white-color: #fffdfc;
 $call-to-action-color: #ee2c32;
+$error-background-color: #ffbfbf;
 $vivid-blue-color: #145d96;
 $light-blue-color: #9ed8db;
 $baby-blue-color: #e9fff9;
 $peach-color: #ffaf7a;
+$light-gray-color: #e7e7e7;
 
 // * ========================================
 // * SIZING VARIABLES
@@ -20,6 +22,7 @@ $footer-height: 100px;
 $container-max-width: 1800px;
 $screen-breakpoint-small: 576px;
 $screen-breakpoint-medium: 768px;
+$border-radius-small: 5px;
 
 //* ---------- Gaps ----------
 $gap-small: 1rem;
@@ -28,8 +31,14 @@ $gap-medium: 2rem;
 //* ---------- Padding ----------
 $container-padding-side: 10vw;
 $container-padding-side-mobile: 5vw;
+$padding-smaller: 0.5rem;
 $padding-small: 1rem;
 $padding-medium: 2rem;
+
+//* ---------- Margin ----------
+$margin-smaller: 0.5rem;
+$margin-small: 1rem;
+$margin-medium: 2rem;
 
 //* ----------- Font -----------
 $font-size-small: 0.8rem;
