@@ -3,14 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10vw;
+  padding: 0 5vw;
   height: 60px;
-  width: 100vw;
   margin: 0;
   color: #fffdfc;
 }
 .header__title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 .header__nav {
@@ -31,20 +30,19 @@
   border-bottom: 2px solid #ee2c32;
 }
 
-@media (max-width: 450px) {
+@media (min-width: 576px) {
   .header {
-    padding: 0 5vw;
+    padding: 0 10vw;
   }
 }
 .footer {
   background-color: #1d3354;
   height: 100px;
-  width: 100vw;
   margin-top: 1rem;
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
-  color: #fff;
+  font-size: 0.8rem;
+  color: #fffdfc;
 }
 .footer__link, .footer__email {
   color: #e9fff9;
@@ -60,7 +58,6 @@ body {
 .content-wrapper {
   padding: 0 5vw;
   min-height: calc(100vh - 60px - 100px - 48px);
-  width: 100vw;
   max-width: 1800px;
   margin: 0 auto;
 }

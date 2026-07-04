@@ -6,12 +6,11 @@
 .footer {
 	background-color: v.$main-blue-color;
 	height: v.$footer-height;
-	width: 100vw;
 	margin-top: 1rem;
 	text-align: center;
-	padding: 1rem;
-	font-size: 0.9rem;
-	color: #fff;
+	padding: v.$padding-small;
+	font-size: v.$font-size-small;
+	color: v.$main-white-color;
 
     &__link, &__email {
         color: v.$baby-blue-color;
