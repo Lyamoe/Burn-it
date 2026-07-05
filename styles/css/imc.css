@@ -327,10 +327,13 @@ body {
   display: block;
   margin: 1rem auto;
 }
-.calculator__error-message {
+.calculator__error-box {
   background-color: #ffbfbf;
   border: 1px #ee2c32 solid;
   padding: 0.5rem;
+}
+.calculator__error-box--hidden {
+  display: none;
 }
 
 @media (min-width: 576px) {

@@ -54,10 +54,14 @@
 		margin: v.$margin-small auto;
 	}
 
-	&__error-message {
+	&__error-box {
 		background-color: v.$error-background-color;
         border: 1px v.$call-to-action-color solid;
         padding: v.$padding-smaller;
+
+		&--hidden {
+			display: none;
+		}
 	}
 }
 
