@@ -1,39 +1,43 @@
 # TODO
 
-This is the development roadmap for the Bunnit project, focusing on engineering robust Vanilla JS features and clean architecture.
+This is the development roadmap for the Bunnit project, focusing on engineering Vanilla JS features and clean architecture.
 
 ## Features
 
-### Navigation & Layout
+* [ ] FAQ Section at the Bottom of index
+* [ ] Information about the calculator under the calculator box
+  * [ ] What the formula is
+  * [ ] Since then it exists and short history
+  * [ ] Information about the benefits of using it
+* [ ] Theme Switcher (Dark/Light Mode)
+* [ ] Save user metrics in localStorage so they don't have to re-enter them.
+* [ ] Add a testing suite (like Jest)
+* [ ] Unit Toggle System (Metric vs. Imperial)
+
+### Calculator Ideas
+
+* [ ] Health & Body Composition
+  * [x] Body Mass Index (BMI)
+  * [ ] Body Fat Percentage (U.S. Navy Method)
+  * [ ] Lean Mass
+* [ ] Nutrition & Diet
+  * [ ] Daily Energy Expenditure (TDEE)
+  * [ ] Ideal Water Consumption
+* [ ] Workout
+  * [ ] 1RM (One Repetition Maximum) calculator for strength training
+* [ ] Change the navbar to (Home | Nutrition | Workout)
+
+## Fixes & Refactoring
+
+> free from bugs yay
+
+## DONE
 
 * [x] Add a Navigation Bar (Home | About | Contact)
 * [x] A Hero Section Subtitle or Intro
 * [x] "How it Works" Section
-* [ ] FAQ Section at the Bottom
-
-### Calculator Suite & Categories
-
-* [ ] Health & Body Composition
-  * [ ] Body Mass Index (BMI) with dynamic visual feedback (colors by range)
-  * [ ] Body Fat Percentage (U.S. Navy Method) with conditional inputs by gender
-  * [ ] Lean Mass (Calculation based on body fat percentage)
-* [ ] Nutrition & Diet
-  * [ ] Daily Energy Expenditure (TDEE) using basal metabolic rate and activity factor
-  * [ ] Ideal Water Consumption (Customized calculation by weight and activity level)
-  * [ ] Macronutrient Split (Proteins, Carbohydrates, and Fats based on goal: cutting/bulking)
-* [ ] Workout
-  * [ ] 1RM (One Repetition Maximum) calculator for strength training
-  * [ ] Advanced Timer (Timer for HIIT/Tabata workouts with sound alerts via Web Audio API)
-
-### Portfolio-Enhancing Features (The JavaScript "Flex")
-
-* [ ] Local History (LocalStorage): Save the user's latest calculated results so they can track their progress without needing an external database.
-* [ ] Data Export: Button to generate a report in a text file (.txt) or simple PDF with all the user's calculated metrics.
-* [ ] Theme Switcher (Dark/Light Mode): Implement via JS by manipulating classes in the body or custom CSS properties (variables).
-* [ ] Robust Form Validation: Custom real-time validation (e.g., prevent height greater than 3 meters or zero weight) without using native browser alerts.
-
-## Fixes & Refactoring
-
-* [ ] Refactor Main Layout CSS (index.scss):
-  * [ ] Eliminate the 48px magic number on line 18 of index.scss (content-wrapper).
-* [ ] JS Architecture (Separation of Concerns): Separate purely mathematical functions (logic layer) from functions that modify the HTML (UI layer).
+* [x] Robust Form Validation (e.g., prevent height greater than 3 meters or zero weight)
+* [x] Separate logic layer from UI layer
+* [x] Eliminate the 48px magic number in_Common.scss (content-wrapper).
+* [x] Separate color palette from functional varibles
+* [x] Results must be hidden after the user presses calculate again
