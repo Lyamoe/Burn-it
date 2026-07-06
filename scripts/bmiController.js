@@ -25,7 +25,7 @@ export function initBMIController() {
 	form.addEventListener("submit", function (event) {
 		event.preventDefault();
 
-		resetErrorStyles(errorContainer, inputs["weight"], inputs["height"]);
+		resetStyles(errorContainer, resultContainer, inputs["weight"], inputs["height"]);
 
 		const weight = parseFloat(inputs["weight"].value);
 		const height = parseFloat(inputs["height"].value) / 100; //? in meters
@@ -55,8 +55,9 @@ function showErrorToClient(container, input, errorMessage) {
 	}
 }
 
-function resetErrorStyles(container, wInput, hInput) {
+function resetStyles(container, result, wInput, hInput) {
 	container.classList.add("calculator__error-box--hidden");
+	result.innerHTML = "";
 	wInput.classList.remove("calculator__number-input--error");
 	hInput.classList.remove("calculator__number-input--error");
 }
