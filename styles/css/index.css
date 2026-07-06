@@ -226,13 +226,28 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #0f0f0f;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 .content-wrapper {
   padding: 0 5vw;
-  min-height: calc(100vh - 60px - 100px - 48px);
   max-width: 1800px;
   margin: 0 auto;
+  flex-grow: 1;
+}
+
+.context-image {
+  height: 10rem;
+  width: 100%;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 768px) {

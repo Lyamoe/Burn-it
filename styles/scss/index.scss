@@ -16,18 +16,18 @@
 		url("../../assets/images/index-hero-calculator.jpg") no-repeat center center / cover;
 	text-align: center;
 	padding: v.$padding-medium;
-	margin: v.$margin-medium 0;
+	margin: v.$margin-large 0;
 
 	&__title {
 		font-size: v.$font-size-title;
 		font-weight: v.$font-weight-bold;
-		margin-bottom: v.$margin-small;
-		color: v.$vivid-blue-color;
+		margin-bottom: v.$margin-medium;
+		color: v.$l-theme-secondary;
 	}
 
 	&__subtitle {
 		font-size: v.$font-size-medium;
-		margin-top: v.$margin-smaller;
+		margin-top: v.$margin-small;
 	}
 }
 
@@ -40,24 +40,24 @@
 
 	&__title {
 		font-size: v.$font-size-large;
-		margin-bottom: v.$margin-smaller;
+		margin-bottom: v.$margin-small;
 		transition: color v.$smooth-transition;
 	}
 
 	&__link {
 		display: block;
-		color: v.$main-black-color;
+		color: v.$text-black;
 		text-decoration: none;
 		padding: v.$padding-medium;
-		border: 1px solid v.$main-blue-color;
+		border: v.$border-thin v.$l-theme-primary;
 		border-radius: v.$border-radius-small;
 		transition:
 			background-color v.$smooth-transition,
 			color v.$smooth-transition;
 
 		&:hover {
-			background-color: v.$main-blue-color;
-			color: v.$baby-blue-color;
+			background-color: v.$l-theme-primary;
+			color: v.$l-theme-text-soft-highlight;
 		}
 	}
 
@@ -67,9 +67,9 @@
 }
 
 .how-it-works {
-	background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, v.$light-blue-color 100%);
+	background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, v.$l-theme-background-highlight 100%);
 	padding: v.$padding-medium;
-	margin: v.$margin-medium 0;
+	margin: v.$margin-large 0;
 	box-shadow: -5px 5px 6px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 
@@ -80,8 +80,8 @@
 	&__title {
 		font-size: v.$font-size-large;
 		font-weight: v.$font-weight-bold;
-		margin-bottom: v.$margin-smaller;
-		color: v.$vivid-blue-color;
+		margin-bottom: v.$margin-small;
+		color: v.$l-theme-secondary;
 	}
 
 	&__topic-title {

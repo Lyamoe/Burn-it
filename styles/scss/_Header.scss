@@ -4,14 +4,14 @@
 @use "Variables" as v;
 
 .header {
-	background-color: v.$main-blue-color;
+	background-color: v.$l-theme-primary;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 v.$container-padding-side-mobile;
 	height: v.$header-height;
 	margin: 0;
-	color: v.$main-white-color;
+	color: v.$text-white;
 
 	&__title {
 		font-size: v.$font-size-title;
@@ -30,7 +30,7 @@
 
 	&__link {
 		text-decoration: none;
-		color: v.$baby-blue-color;
+		color: v.$l-theme-text-soft-highlight;
 
 		&--active {
 			color: v.$call-to-action-color;

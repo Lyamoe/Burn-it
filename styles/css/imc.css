@@ -226,13 +226,28 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #0f0f0f;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 .content-wrapper {
   padding: 0 5vw;
-  min-height: calc(100vh - 60px - 100px - 48px);
   max-width: 1800px;
   margin: 0 auto;
+  flex-grow: 1;
+}
+
+.context-image {
+  height: 10rem;
+  width: 100%;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 768px) {
@@ -290,13 +305,6 @@ body {
   color: #e9fff9;
 }
 
-.content-intro__image {
-  height: 10rem;
-  width: 100%;
-  background-size: cover;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .content-intro__title {
   font-size: 2rem;
   color: #145d96;
@@ -305,20 +313,22 @@ body {
 
 .calculator {
   background-color: #e7e7e7;
-  padding: 1rem 2rem;
+  padding: 2rem 3rem;
   margin: 2rem 0;
   border-radius: 5px;
 }
 .calculator__input-box {
-  padding: 0.5rem;
+  padding: 1rem 0;
+  align-items: center;
 }
 .calculator__input-box * {
   display: inline-block;
   width: 100%;
 }
 .calculator__number-input {
-  border: 1px #ffaf7a solid;
+  border: 1px solid #ffaf7a;
   border-radius: 5px;
+  padding: 0.5rem;
 }
 .calculator__number-input--error {
   border-color: #ee2c32;
@@ -326,17 +336,59 @@ body {
 .calculator__submit {
   display: block;
   margin: 1rem auto;
+  padding: 0.5rem 3rem;
+  background-color: #e9fff9;
+  border: 1px solid #145d96;
+  border-radius: 5px;
+  color: #1d3354;
+  cursor: pointer;
 }
 .calculator__error-box {
   background-color: #ffbfbf;
-  border: 1px #ee2c32 solid;
-  padding: 0.5rem;
+  border: 1px solid #ee2c32;
+  padding: 0.5rem 1rem;
 }
 .calculator__error-box--hidden {
   display: none;
 }
 
-@media (min-width: 576px) {
+.related-info {
+  padding: 2rem;
+}
+.related-info__title {
+  color: #145d96;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.related-info__card {
+  display: block;
+  border: 1px solid #ffaf7a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #0f0f0f;
+}
+.related-info__image {
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.related-info__card-title {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+.related-info__description {
+  margin: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 3fr 2fr;
+  }
   .calculator__input-box {
     display: flex;
     justify-content: space-evenly;

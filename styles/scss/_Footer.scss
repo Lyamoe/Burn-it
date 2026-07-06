@@ -4,15 +4,15 @@
 @use "Variables" as v;
 
 .footer {
-	background-color: v.$main-blue-color;
+	background-color: v.$l-theme-primary;
 	height: v.$footer-height;
-	margin-top: v.$margin-small;
+	margin-top: v.$margin-medium;
 	text-align: center;
 	padding: v.$padding-small;
 	font-size: v.$font-size-small;
-	color: v.$main-white-color;
+	color: v.$text-white;
 
     &__link, &__email {
-        color: v.$baby-blue-color;
+        color: v.$l-theme-text-soft-highlight;
     }
 }

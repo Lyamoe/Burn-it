@@ -3,16 +3,31 @@
 // * ========================================
 // * COLOR VARIABLES
 // * ========================================
-$main-blue-color: #1d3354;
-$main-black-color: #0f0f0f;
-$main-white-color: #fffdfc;
-$call-to-action-color: #ee2c32;
-$error-background-color: #ffbfbf;
-$vivid-blue-color: #145d96;
-$light-blue-color: #9ed8db;
-$baby-blue-color: #e9fff9;
-$peach-color: #ffaf7a;
-$light-gray-color: #e7e7e7;
+
+//* ---------- Palette ----------
+$abneb-black: #0f0f0f; // almost but not entirely black-black
+$abnew-white: #fffdfc; // almost but not entirely white-white
+$vivid-red: #ee2c32;
+$light-red: #ffbfbf;
+$dark-blue: #1d3354;
+$vivid-blue: #145d96;
+$light-blue: #9ed8db;
+$baby-blue: #e9fff9;
+$peach: #ffaf7a;
+$light-gray: #e7e7e7;
+
+//* ---------- Functional ----------
+$l-theme-primary: $dark-blue;
+$l-theme-secondary: $vivid-blue;
+$l-theme-background-highlight: $light-blue;
+$l-theme-text-soft-highlight: $baby-blue;
+$l-theme-box-border: $peach;
+$l-theme-box-background: $light-gray;
+$text-black: $abneb-black;
+$text-white: $abnew-white;
+$background-white: $abnew-white;
+$call-to-action-color: $vivid-red;
+$error-background-color: $light-red;
 
 // * ========================================
 // * SIZING VARIABLES
@@ -22,7 +37,11 @@ $footer-height: 100px;
 $container-max-width: 1800px;
 $screen-breakpoint-small: 576px;
 $screen-breakpoint-medium: 768px;
+
+//* ---------- Borders ----------
 $border-radius-small: 5px;
+$border-radius-medium: 10px;
+$border-thin: 1px solid;
 
 //* ---------- Gaps ----------
 $gap-small: 1rem;
@@ -34,16 +53,18 @@ $container-padding-side-mobile: 5vw;
 $padding-smaller: 0.5rem;
 $padding-small: 1rem;
 $padding-medium: 2rem;
+$padding-large: 3rem;
 
 //* ---------- Margin ----------
-$margin-smaller: 0.5rem;
-$margin-small: 1rem;
-$margin-medium: 2rem;
+$margin-small: 0.5rem;
+$margin-medium: 1rem;
+$margin-large: 2rem;
 
 //* ----------- Font -----------
 $font-size-small: 0.8rem;
 $font-size-medium: 1rem;
 $font-size-large: 1.2rem;
+$font-size-larger: 1.6rem;
 $font-size-title: 2rem;
 
 // * ========================================
@@ -61,17 +82,31 @@ $smooth-transition: 0.3s ease;
 // * ========================================
 // * MIXINS
 // * ========================================
-@mixin custom-grid($cols: auto-fit, $gap: $gap-small) {
-	display: grid;
-	gap: $gap;
 
-	@if meta.type-of($cols) == number {
-		grid-template-columns: repeat(1, 1fr);
+/// Custom responsive grid generator
+/// @param {Keyword|Number|List} $cols [auto-fit] - Number of columns, auto-fit/fill, or custom track list
+/// @param {Length} $gap [$gap-small] - Gap size between cells
+/// @param {Length} $min-width [250px] - Minimum width for auto-fit wrapping
+@mixin custom-grid($cols: auto-fit, $gap: $gap-small, $min-width: 250px) {
+    display: grid;
+    gap: $gap;
 
-		@media (min-width: $screen-breakpoint-medium) {
-			grid-template-columns: repeat($cols, 1fr);
-		}
-	} @else {
-		grid-template-columns: repeat($cols, minmax(min(100%, 250px), 1fr));
-	}
+    //* Fixed number of columns
+    @if meta.type-of($cols) == number {
+        grid-template-columns: repeat(1, 1fr); //? Mobile fallback
+
+        @media (min-width: $screen-breakpoint-medium) {
+            grid-template-columns: repeat($cols, 1fr); 
+        }
+    } 
+
+    //* Smart responsive wrapping
+    @else if $cols == auto-fit or $cols == auto-fill {
+        grid-template-columns: repeat($cols, minmax(min(100%, $min-width), 1fr));
+    } 
+
+    //* Custom value (e.g., 1fr 2fr)
+    @else {
+        grid-template-columns: $cols; 
+    }
 }

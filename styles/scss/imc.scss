@@ -10,29 +10,23 @@
 // * ========================================
 // * STYLES
 // * ========================================
-
 .content-intro {
-	&__image {
-		height: 10rem;
-		width: 100%;
-		background-size: cover;
-		object-fit: cover;
-	}
 	&__title {
 		font-size: v.$font-size-title;
-		color: v.$vivid-blue-color;
-		margin: v.$margin-medium 0;
+		color: v.$l-theme-secondary;
+		margin: v.$margin-large 0;
 	}
 }
 
 .calculator {
-	background-color: v.$light-gray-color;
-	padding: v.$padding-small v.$padding-medium;
-	margin: v.$margin-medium 0;
+	background-color: v.$l-theme-box-background;
+	padding: v.$padding-medium v.$padding-large;
+	margin: v.$margin-large 0;
 	border-radius: v.$border-radius-small;
 
 	&__input-box {
-		padding: v.$padding-smaller;
+		padding: v.$padding-small 0;
+		align-items: center;
 
 		& * {
 			display: inline-block;
@@ -41,23 +35,30 @@
 	}
 
 	&__number-input {
-		border: 1px v.$peach-color solid;
+		border: v.$border-thin v.$l-theme-box-border;
 		border-radius: v.$border-radius-small;
+		padding: v.$padding-smaller;
 
-        &--error {
-            border-color: v.$call-to-action-color;
-        }
+		&--error {
+			border-color: v.$call-to-action-color;
+		}
 	}
 
 	&__submit {
 		display: block;
-		margin: v.$margin-small auto;
+		margin: v.$margin-medium auto;
+		padding: v.$padding-smaller v.$padding-large;
+		background-color: v.$l-theme-text-soft-highlight;
+		border: v.$border-thin v.$l-theme-secondary;
+		border-radius: v.$border-radius-small;
+		color: v.$l-theme-primary;
+		cursor: pointer;
 	}
 
 	&__error-box {
 		background-color: v.$error-background-color;
-        border: 1px v.$call-to-action-color solid;
-        padding: v.$padding-smaller;
+		border: v.$border-thin v.$call-to-action-color;
+		padding: v.$padding-smaller v.$padding-small;
 
 		&--hidden {
 			display: none;
@@ -65,7 +66,46 @@
 	}
 }
 
-@media (min-width: v.$screen-breakpoint-small) {
+.related-info {
+	padding: v.$padding-medium;
+
+	&__title {
+		color: v.$l-theme-secondary;
+		font-size: v.$font-size-larger;
+		margin-bottom: v.$margin-medium;
+	}
+
+	&__card {
+		display: block;
+		border: v.$border-thin v.$l-theme-box-border;
+		border-radius: v.$border-radius-medium;
+		overflow: hidden;
+		text-decoration: none;
+		color: v.$text-black;
+	}
+
+	&__image {
+		height: 150px;
+		width: 100%;
+		background-size: cover;
+		object-fit: cover;
+	}
+
+	&__card-title {
+		font-size: v.$font-size-large;
+		margin: v.$margin-small;
+	}
+
+	&__description {
+		margin: v.$margin-small;
+	}
+}
+
+@media (min-width: v.$screen-breakpoint-medium) {
+	.content-wrapper {
+		@include v.custom-grid(3fr 2fr, v.$margin-large);
+	}
+
 	.calculator {
 		&__input-box {
 			display: flex;
