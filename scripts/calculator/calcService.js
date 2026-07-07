@@ -1,41 +1,58 @@
-export function getBmi(peso, alturaEmMetros) {
-    if (!peso || !alturaEmMetros || alturaEmMetros <= 0) return null;
-    return peso / (alturaEmMetros * alturaEmMetros);
+// * ========================================
+// * CALCULATOR VALUES
+// * ========================================
+
+// * ---------- BMI ----------
+export function getBmi(weight, heightInMeters) {
+	if (!weight || !heightInMeters || heightInMeters <= 0) return null;
+
+	const bmi = weight / (heightInMeters * heightInMeters);
+	const bmirange = getBmiRange(bmi);
+	return [bmi, bmirange];
 }
 
 export function getBmiRange(bmi) {
-    if (bmi < 18.5) return "Abaixo do peso";
-    if (bmi < 25) return "Peso normal";
-    if (bmi < 30) return "Sobrepeso";
-    return "Obesidade";
+	if (bmi < 18.5) return "Abaixo do peso";
+	if (bmi < 25) return "Peso normal";
+	if (bmi < 30) return "Sobrepeso";
+	return "Obesidade";
 }
 
-export function bmiErrorHandling(weight, height) {
-	if (!weight || Number.isNaN(weight)) {
-		return [true, "O peso deve ser preenchido", "weight"];
+// * ---------- Body Fat ----------
+export function getBodyFat(sex, height, neck, waist, hip) {
+	let gorduraCorporal;
+	if (sex === "masculine") {
+		gorduraCorporal =
+			495 /
+				(1.0324 -
+					0.19077 * Math.log10(waist - neck) +
+					0.15456 * Math.log10(height)) -
+			450;
+	} else {
+		gorduraCorporal =
+			495 /
+				(1.29579 -
+					0.35004 * Math.log10(waist + hip - neck) +
+					0.221 * Math.log10(height)) -
+			450;
 	}
+	return gorduraCorporal;
+}
 
-	if (weight <= 20 || weight >= 635) {
-		// actual weight of the heaviest adult
-		return [
-			true,
-			"O peso deve conter um valor real para humanos adultos",
-			"weight",
-		];
-	}
+// * ========================================
+// * GENERIC FUNCTIONS
+// * ========================================
+export function numInputErrorHandling(fieldName, value, min, max) {
+    if (value === null || value === undefined || Number.isNaN(value)) {
+        return [true, `O campo "${fieldName}" deve ser preenchido`];
+    }
 
-	if (!height || Number.isNaN(height)) {
-		return [true, "A altura deve ser preenchida", "height"];
-	}
+    if (value < min || value > max) {
+        return [
+            true,
+            `O campo "${fieldName}" deve conter um valor válido para adultos`,
+        ];
+    }
 
-	if (height <= 0.54 || height >= 2.72) {
-		// actual height of the tallest and smallest adult (in m)
-		return [
-			true,
-			"A altura deve conter um valor real para humanos adultos",
-			"height",
-		];
-	}
-
-	return [false, "", ""];
+    return [false, ""];
 }

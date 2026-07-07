@@ -325,6 +325,9 @@ footer {
   display: inline-block;
   width: 100%;
 }
+.calculator__input-box--hidden {
+  display: none !important;
+}
 .calculator__text-input {
   border: 1px solid #ffaf7a;
   border-radius: 5px;
