@@ -1,4 +1,37 @@
-import { calculatorConfigs } from "./calcOptions.js";
+import { getBmi, getBmiRange, bmiErrorHandling } from "./calcService.js";
+import { inputsDOM } from "./inputDOM.js";
+
+const calculatorConfigs = {
+	bmi: {
+		title: "Índice de Massa Corporal (IMC)",
+
+		subtitle:
+			"O cálculo do índice de massa corporal (IMC) é uma ferramenta simples e rápida para avaliar se uma pessoa está com o peso ideal em relação à sua altura.",
+
+		inputs: inputsDOM.weight + inputsDOM.height + inputsDOM.submit,
+
+		calculate: (errCont) => {
+			const wInput = document.getElementById("weight");
+			const hInput = document.getElementById("height");
+
+			const w = parseFloat(wInput.value);
+			const h = parseFloat(hInput.value) / 100;
+
+			const [isInvalid, errorMessage, errorField] = bmiErrorHandling(w, h);
+
+			if (isInvalid) {
+				const errorDOM = errorField == "weight" ? wInput : hInput;
+				showErrorToClient(errCont, errorDOM, errorMessage);
+				return true;
+			}
+
+			const bmi = getBmi(w, h);
+			const range = getBmiRange(bmi);
+
+			return `<p>Seu bmi é: <strong>${bmi.toFixed(2)}</strong></p> <p>Classificação: <strong>${range}</strong></p>`;
+		},
+	},
+};
 
 export function initCalcController() {
 	const form = document.querySelector("form");
@@ -14,7 +47,8 @@ export function initCalcController() {
 		return;
 	}
 
-	const currentCalc = window.location.search.replace("?", "");
+	const urlParams = new URLSearchParams(window.location.search);
+	const currentCalc = urlParams.get("calc");
 	const activeConfig = calculatorConfigs[currentCalc];
 
 	if (activeConfig) {
@@ -32,7 +66,7 @@ export function initCalcController() {
 		resetStyles(errorContainer, resultContainer);
 
 		if (activeConfig) {
-			const result = activeConfig.calculate();
+			const result = activeConfig.calculate(errorContainer);
 
 			if (result !== true) {
 				//? True means it has shown a error to the user

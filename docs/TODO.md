@@ -29,10 +29,9 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 
 ## Fixes & Refactoring
 
-* [ ] **High Priority**: Break the circular dependency loop between `calcController.js` and `calcOptions.js`
-* [ ] **High Priority**: Remove DOM lookups (`getElementById`) from `calcOptions.js` global scope to prevent `null` references on early loads
-* [ ] **Medium Priority**: Refactor `activeConfig.calculate()` to return a pure validation/result payload object instead of directly calling UI methods
+* [ ] **Scope DOM Queries**: Refactor `resetStyles()` to query inputs *only* within the active form (`form.querySelectorAll`) to prevent side-effects if multiple elements share class names globally.
 * [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
+* [ ] **Abstract Dynamic Input Generation**: Replace the rigid string interpolation in `inputsDOM` with a more scalable component-rendering pattern (e.g., standardizing configuration schemes for inputs) to prepare for future nutrition/workout calculators.
 
 ## DONE
 
@@ -45,3 +44,4 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [x] Separate color palette from functional varibles
 * [x] Results must be hidden after the user presses calculate again
 * [x] Use the same HTML to all calculators
+* [x] Break the circular dependency loop between `calcController.js` and `calcOptions.js`

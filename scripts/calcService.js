@@ -10,7 +10,7 @@ export function getBmiRange(bmi) {
     return "Obesidade";
 }
 
-export function errorHandling(weight, height) {
+export function bmiErrorHandling(weight, height) {
 	if (!weight || Number.isNaN(weight)) {
 		return [true, "O peso deve ser preenchido", "weight"];
 	}
