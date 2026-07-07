@@ -175,7 +175,7 @@ function showErrorToClient(container, input, errorMessage) {
 	container.classList.remove("calculator__error-box--hidden");
 	container.innerHTML = `<p class="calculator__error-text">${errorMessage}</p>`;
 	if (input) {
-		input.classList.add("calculator__number-input--error");
+		input.classList.add("calculator__text-input--error");
 	}
 }
 
@@ -186,7 +186,7 @@ function resetStyles(container, result, form) {
 	const inputs = form.querySelectorAll("input, select");
 
 	inputs.forEach((input) => {
-		input.classList.remove("calculator__number-input--error");
+		input.classList.remove("calculator__text-input--error");
 		input.classList.remove("calculator__radio-input--error");
 	});
 }

@@ -34,7 +34,7 @@
 		}
 	}
 
-	&__number-input {
+	&__text-input {
 		border: v.$border-thin v.$l-theme-box-border;
 		border-radius: v.$border-radius-small;
 		padding: v.$padding-smaller;
@@ -42,6 +42,15 @@
 		&--error {
 			border-color: v.$call-to-action-color;
 		}
+	}
+
+	&__radio-group {
+		text-align: center;
+		@include v.custom-grid(auto-fit, v.$gap-small, 80px);
+		background-color: v.$background-white;
+		border-radius: v.$border-radius-small;
+		padding: v.$padding-small;
+		border: v.$border-thin v.$l-theme-box-border;
 	}
 
 	&__submit {
@@ -110,13 +119,11 @@
 		&__input-box {
 			display: flex;
 			justify-content: space-evenly;
-
-			& * {
-				display: inline;
-			}
 		}
 
-		&__number-input {
+		
+
+		&__text-input, &__radio-group {
 			width: 65%;
 		}
 

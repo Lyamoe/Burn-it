@@ -11,7 +11,7 @@ export const inputsDOM = {
 			<input
 				type="number"
 				id="${id}"
-				class="calculator__number-input"
+				class="calculator__text-input"
 				name="${id}"
 				min="${min}"
 				max="${max}"
@@ -28,6 +28,7 @@ export const inputsDOM = {
 					<label class="calculator__radio-label">
 						<input 
 							type="radio" 
+							class="calculator__radio-option"
 							id="${id}-${opt.value}" 
 							name="${id}" 
 							value="${opt.value}" 
