@@ -123,12 +123,12 @@ const CalculatorConfigs = {
 
 export function initCalcController() {
 	const form = document.querySelector(".calculator__form");
-	const resultContainer = document.getElementById("resultado");
-	const errorContainer = document.getElementById("error-box");
-	const pageTitle = document.getElementById("content-intro__title");
-	const pageDesc = document.getElementById("content-intro__text");
+	const resultContainer = document.querySelector(".calculator__results");
+	const errorContainer = document.querySelector(".calculator__error-box");
+	const pageTitle = document.querySelector(".content-intro__title");
+	const pageDesc = document.querySelector(".content-intro__text");
 
-	if (!form || !resultContainer || !errorContainer) {
+	if (!form || !resultContainer || !errorContainer || !pageTitle || !pageDesc) {
 		console.error(
 			"One of the key DOM components for the BMI results are missing.",
 		);
