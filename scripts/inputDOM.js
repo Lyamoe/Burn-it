@@ -1,80 +1,42 @@
+// inputDOM.js
 export const inputsDOM = {
-	submit: `<button type="submit" class="calculator__submit">
-							Calcular
-						</button>`,
-	weight: `<div class="calculator__input-box">
-				<label for="weight" class="calculator__label">Peso (kg):</label>
-				<input
-					type="number"
-					id="weight"
-					class="calculator__number-input"
-					name="weight"
-					step="0.1"
-					required
-				/>
+	submit: () => `
+		<button type="submit" class="calculator__submit">
+			Calcular
+		</button>`,
+
+	number: ({ id, label, min = "", max = "", step = "0.1" }) => `
+		<div class="calculator__input-box" id="box-${id}">
+			<label for="${id}" class="calculator__label">${label}:</label>
+			<input
+				type="number"
+				id="${id}"
+				class="calculator__number-input"
+				name="${id}"
+				min="${min}"
+				max="${max}"
+				step="${step}"
+				required
+			/>
+		</div>`,
+
+	radio: ({ id, label, options }) => `
+		<div class="calculator__input-box" id="box-${id}">
+			<span class="calculator__label">${label}:</span>
+			<div class="calculator__radio-group">
+				${options.map((opt, index) => `
+					<label class="calculator__radio-label">
+						<input 
+							type="radio" 
+							id="${id}-${opt.value}" 
+							name="${id}" 
+							value="${opt.value}" 
+							${index === 0 ? "checked" : ""} 
+							required
+						/>
+						${opt.label}
+					</label>
+				`).join("")}
 			</div>
-		`,
-	height: `
-			<div class="calculator__input-box">
-				<label for="height" class="calculator__label">Altura (cm):</label>
-				<input
-					type="number"
-					id="height"
-					class="calculator__number-input"
-					name="height"
-					step="1"
-					required
-				/>
-			</div>
-        `,
-	// TODO: SWITCH TO RADIO BUTTON
-	sex: `<div class="calculator__input-box">
-			<select id="sex" name="sex" class="calculator__number-input" required>
-				<option value="feminine" selected>Feminino</option>
-				<option value="masculine">Masculino</option>
-			</select>
-		</div>
-	`,
-	neck: `<div class="calculator__input-box">
-			<label for="neck" class="calculator__label">Pescoço (cm):</label>
-			<input
-				type="number"
-				class="calculator__number-input"
-				id="neck"
-				name="neck"
-				min="10"
-				step="0.1"
-				max="60"
-				required
-			/>
-		</div>
-	`,
-	waist: `<div class="calculator__input-box">
-			<label for="waist" class="calculator__label">Cintura (cm):</label>
-			<input
-				type="number"
-				class="calculator__number-input"
-				id="waist"
-				name="waist"
-				min="20"
-				step="0.1"
-				max="200"
-				required
-			/>
-		</div>
-	`,
-	hip: `<div class="calculator__input-box">
-			<label for="hip" class="calculator__label">Quadril (cm):</label>
-			<input
-				type="number"
-				class="calculator__number-input"
-				id="hip"
-				name="hip"
-				min="20"
-				step="0.1"
-				max="300"
-				required
-			/>
-		</div>
-	`,
+		</div>`
 };

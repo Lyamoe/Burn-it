@@ -16,12 +16,13 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [ ] Change the calculator's image (over it) per topic
 * [ ] Show same category calculators in the aside
 * [ ] Add JSdoc to the files
+* [ ] SCSS for radio buttons (including error design)
 
 ### Calculator Ideas
 
 * [ ] Health & Body Composition
   * [x] Body Mass Index (BMI)
-  * [ ] Body Fat Percentage (U.S. Navy Method)
+  * [x] Body Fat Percentage (U.S. Navy Method)
   * [ ] Lean Mass
 * [ ] Nutrition & Diet
   * [ ] Daily Energy Expenditure (TDEE)
@@ -33,11 +34,9 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 ## Fixes & Refactoring
 
 * [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
-* [ ] Replace the rigid string interpolation in `inputsDOM` with a more scalable component-rendering pattern.
-* [ ] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects (e.g., via `FormData`) and returns raw numeric/structural results instead of directly querying the DOM via `document.getElementById` and rendering HTML strings.
 * [ ] Move Body Fat calculations and input error handling into `calcService.js`
-* [ ] Implement a mechanism (e.g., `onFieldChange` or visibility dependencies) in the configuration schema to handle conditional field display (e.g., hiding/showing the Hip field based on the selected sex)
-* [ ] Introduce a dedicated presentation layer or utility function to handle formatting and HTML templating of results, removing template literals from the configuration layer.
+* [ ] Implement a mechanism in the configuration schema to handle conditional field display
+* [ ] Introduce a presentation layer or utility function to handle formatting and HTML templating of results
 
 ## DONE
 
@@ -51,4 +50,7 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [x] Results must be hidden after the user presses calculate again
 * [x] Use the same HTML to all calculators
 * [x] Break the circular dependency loop between `calcController.js` and `calcOptions.js`
-* [x] Refactor `resetStyles()` to query inputs *only* within the active form.
+* [x] Refactor `resetStyles()` to query inputs *only* within the active form
+* [x] Replace the rigid string interpolation in `inputsDOM` with a scalable pattern
+* [x] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects (e.g., via `FormData`)
+* [x] Refactor `CalculatorConfigs` so that `calculate` returns raw results instead of DOM

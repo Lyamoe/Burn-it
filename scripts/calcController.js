@@ -18,19 +18,19 @@ const CalculatorConfigs = {
 		subtitle:
 			"O cálculo do índice de massa corporal (IMC) é uma ferramenta simples e rápida para avaliar se uma pessoa está com o peso ideal em relação à sua altura.",
 
-		inputs: inputsDOM.weight + inputsDOM.height + inputsDOM.submit,
+		inputs: () =>
+			inputsDOM.number({ id: "weight", label: "Peso (kg)", step: "0.1" }) +
+			inputsDOM.number({ id: "height", label: "Altura (cm)", step: "1" }) +
+			inputsDOM.submit(),
 
-		calculate: (errCont) => {
-			const wInput = document.getElementById("weight");
-			const hInput = document.getElementById("height");
-
-			const w = parseFloat(wInput.value);
-			const h = parseFloat(hInput.value) / 100;
+		calculate: (errCont, formData) => {
+			const w = parseFloat(formData.get("weight"));
+			const h = parseFloat(formData.get("height")) / 100;
 
 			const [isInvalid, errorMessage, errorField] = bmiErrorHandling(w, h);
 
 			if (isInvalid) {
-				const errorDOM = errorField == "weight" ? wInput : hInput;
+				const errorDOM = document.getElementById(errorField);
 				showErrorToClient(errCont, errorDOM, errorMessage);
 				return true;
 			}
@@ -38,7 +38,7 @@ const CalculatorConfigs = {
 			const bmi = getBmi(w, h);
 			const range = getBmiRange(bmi);
 
-			return `<p>Seu imc é: <strong>${bmi.toFixed(2)}</strong></p> <p>Classificação: <strong>${range}</strong></p>`;
+			return [`Seu imc é: ${bmi.toFixed(2)}`, `Classificação: ${range}`];
 		},
 	},
 	bodyfat: {
@@ -46,20 +46,42 @@ const CalculatorConfigs = {
 
 		subtitle: "Descubra a porcentagem de gordura em seu corpo.", //TODO: Make it bigger
 
-		inputs:
-			inputsDOM.sex +
-			inputsDOM.height +
-			inputsDOM.neck +
-			inputsDOM.waist +
-			inputsDOM.hip +
-			inputsDOM.submit,
+		inputs: () =>
+			inputsDOM.radio({
+				id: "sex",
+				label: "Sexo",
+				options: [
+					{ value: "feminine", label: "Feminino" },
+					{ value: "masculine", label: "Masculino" },
+				],
+			}) +
+			inputsDOM.number({ id: "height", label: "Altura (cm)", step: "1" }) +
+			inputsDOM.number({
+				id: "neck",
+				label: "Pescoço (cm)",
+				min: "10",
+				max: "60",
+			}) +
+			inputsDOM.number({
+				id: "waist",
+				label: "Cintura (cm)",
+				min: "20",
+				max: "200",
+			}) +
+			inputsDOM.number({
+				id: "hip",
+				label: "Quadril (cm)",
+				min: "20",
+				max: "300",
+			}) +
+			inputsDOM.submit(),
 
-		calculate: (errCont) => {
-			const sex = document.getElementById("sex").value;
-			const height = parseFloat(document.getElementById("height").value);
-			const neck = parseFloat(document.getElementById("neck").value);
-			const waist = parseFloat(document.getElementById("waist").value);
-			const hip = parseFloat(document.getElementById("hip").value);
+		calculate: (errCont, formData) => {
+			const sex = formData.get("sex");
+			const height = parseFloat(formData.get("height"));
+			const neck = parseFloat(formData.get("neck"));
+			const waist = parseFloat(formData.get("waist"));
+			const hip = formData.get("hip") ? parseFloat(formData.get("hip")) : 0;
 
 			// TODO: Call this somewhere else
 			// 	document.getElementById("sexo").addEventListener("change", function () {
@@ -94,7 +116,7 @@ const CalculatorConfigs = {
 					450;
 			}
 
-			return "Gordura Corporal: " + gorduraCorporal.toFixed(2) + "%";
+			return [`Sua Gordura Corporal é: ${gorduraCorporal.toFixed(2)}%`];
 		},
 	},
 };
@@ -120,7 +142,8 @@ export function initCalcController() {
 	if (activeConfig) {
 		pageTitle.innerText = activeConfig.title;
 		pageDesc.innerText = activeConfig.subtitle;
-		form.innerHTML = activeConfig.inputs;
+
+		form.innerHTML = activeConfig.inputs();
 	} else {
 		pageTitle.innerText = "Erro na calculadora selecionada";
 		// TODO: Throw 404 page
@@ -129,20 +152,26 @@ export function initCalcController() {
 	form.addEventListener("submit", function (e) {
 		e.preventDefault();
 
+		const formData = new FormData(this);
+
 		resetStyles(errorContainer, resultContainer, this);
 
 		if (activeConfig) {
-			const result = activeConfig.calculate(errorContainer);
+			const result = activeConfig.calculate(errorContainer, formData);
 
 			if (result !== true) {
-				//? True means it has shown a error to the user
-				resultContainer.innerHTML = result;
+				//? True means it has shown an error to the user
+
+				resultContainer.innerHTML = result
+					.map((text) => `<p>${text}</p>`)
+					.join("");
 			}
 		}
 	});
 }
 
-export function showErrorToClient(container, input, errorMessage) {
+function showErrorToClient(container, input, errorMessage) {
+	// TODO: Different classes based on the input type
 	container.classList.remove("calculator__error-box--hidden");
 	container.innerHTML = `<p class="calculator__error-text">${errorMessage}</p>`;
 	if (input) {
@@ -154,9 +183,10 @@ function resetStyles(container, result, form) {
 	container.classList.add("calculator__error-box--hidden");
 	result.innerHTML = "";
 
-	const inputs = form.querySelectorAll(".calculator__number-input");
+	const inputs = form.querySelectorAll("input, select");
 
 	inputs.forEach((input) => {
 		input.classList.remove("calculator__number-input--error");
+		input.classList.remove("calculator__radio-input--error");
 	});
 }
