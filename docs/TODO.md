@@ -35,7 +35,6 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 
 * [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
 * [ ] Move Body Fat calculations and input error handling into `calcService.js`
-* [ ] Implement a mechanism in the configuration schema to handle conditional field display
 * [ ] Introduce a presentation layer or utility function to handle formatting and HTML templating of results
 
 ## DONE
@@ -54,3 +53,4 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [x] Replace the rigid string interpolation in `inputsDOM` with a scalable pattern
 * [x] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects (e.g., via `FormData`)
 * [x] Refactor `CalculatorConfigs` so that `calculate` returns raw results instead of DOM
+* [x] Implement a mechanism to handle conditional field display
