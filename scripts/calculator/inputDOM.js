@@ -21,8 +21,8 @@ export const inputsDOM = {
 		</div>`,
 
 	radio: ({ id, label, options }) => `
-		<div class="calculator__input-box" id="box-${id}">
-			<span class="calculator__label">${label}:</span>
+		<fieldset class="calculator__input-box" id="box-${id}">
+			<legend class="calculator__label">${label}:</legend>
 			<div class="calculator__radio-group">
 				${options.map((opt, index) => `
 					<label class="calculator__radio-label">
@@ -39,5 +39,5 @@ export const inputsDOM = {
 					</label>
 				`).join("")}
 			</div>
-		</div>`
+		</fieldset>`
 };

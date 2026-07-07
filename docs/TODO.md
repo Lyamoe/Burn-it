@@ -29,12 +29,11 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
   * [ ] Ideal Water Consumption
 * [ ] Workout
   * [ ] 1RM (One Repetition Maximum) calculator for strength training
-* [ ] Change the navbar to (Home | Nutrition | Workout)
+* [ ] Change the navbar to (Health | Nutrition | Workout)
 
 ## Fixes & Refactoring
 
 * [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
-* [ ] Move Body Fat calculations and input error handling into `calcService.js`
 * [ ] Introduce a presentation layer or utility function to handle formatting and HTML templating of results
 
 ## DONE
@@ -54,3 +53,5 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [x] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects (e.g., via `FormData`)
 * [x] Refactor `CalculatorConfigs` so that `calculate` returns raw results instead of DOM
 * [x] Implement a mechanism to handle conditional field display
+* [x] Move Body Fat calculations and input error handling into `calcService.js`
+* [x] Edit meta tags in `index.html` and `calculator.html`

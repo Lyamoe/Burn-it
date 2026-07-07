@@ -27,8 +27,11 @@
 	&__input-box {
 		padding: v.$padding-small 0;
 		align-items: center;
+		padding: v.$padding-small 0;
 
-		& * {
+		& > .calculator__label,
+		& > .calculator__text-input,
+		& > .calculator__radio-group {
 			display: inline-block;
 			width: 100%;
 		}
@@ -36,6 +39,12 @@
 		&--hidden {
 			display: none !important;
 		}
+	}
+
+	&__label {
+		display: block;
+		padding: 0;
+		float: left;
 	}
 
 	&__text-input {
@@ -50,11 +59,16 @@
 
 	&__radio-group {
 		text-align: center;
-		@include v.custom-grid(auto-fit, v.$gap-small, 80px);
 		background-color: v.$background-white;
 		border-radius: v.$border-radius-small;
 		padding: v.$padding-small;
 		border: v.$border-thin v.$l-theme-box-border;
+		display: flex;
+		flex-direction: column;
+
+		& > .calculator__radio-label {
+			display: inline-block;
+		}
 	}
 
 	&__submit {
@@ -125,9 +139,14 @@
 			justify-content: space-evenly;
 		}
 
-		&__text-input, &__radio-group {
+		&__text-input,
+		&__radio-group {
 			width: 65%;
 		}
+
+		&__radio-group {
+		flex-direction: row;
+	}
 
 		&__label {
 			width: 30%;

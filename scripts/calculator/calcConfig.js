@@ -1,12 +1,6 @@
 import { inputsDOM } from "./inputDOM.js";
 import { getBmi, getBodyFat, numInputErrorHandling } from "./calcService.js";
 
-/**
- * @typedef {Object} CalculationResult
- * @property {string} label - The main text result.
- * @property {string} [secondaryLabel] - Optional sub-text rating or classification.
- */
-
 export const CalculatorConfigs = {
 	bmi: {
 		title: "Índice de Massa Corporal (IMC)",
@@ -64,8 +58,8 @@ export const CalculatorConfigs = {
 	},
 
 	bodyfat: {
-		title: "Porcentagem de Gordura Corporal",
-		subtitle: "Descubra a porcentagem de gordura em seu corpo.",
+		title: "Percentual de Gordura Corporal",
+		subtitle: "Calcular o percentual de gordura corporal ajuda a alcançar um corpo saudável. De acordo com o Conselho Americano de Exercício, o recomendado para mulheres é 14 a 31% enquanto para homens é de 6 a 24%.",
 
 		inputs: () =>
 			inputsDOM.radio({
@@ -107,12 +101,6 @@ export const CalculatorConfigs = {
 
 			const toggleHipVisibility = (sexValue) => {
 				const isMasculine = sexValue === "masculine";
-				console.log(
-					"Toggling hip. Is masculine?",
-					isMasculine,
-					"Target container:",
-					hipContainer,
-				);
 
 				hipContainer.classList.toggle(
 					"calculator__input-box--hidden",
@@ -145,12 +133,60 @@ export const CalculatorConfigs = {
 		 * @returns {CalculationResult|boolean}
 		 */
 		calculate: (errCont, formData, showErrorToClient) => {
+			const schema = {
+				sex: {
+					value: formData.get("sex"),
+					namePtBr: "sexo",
+				},
+				height: {
+					value: parseFloat(formData.get("height")), // Keep as cm for the error range check
+					min: 55,
+					max: 275,
+					namePtBr: "altura",
+				},
+				neck: {
+					value: parseFloat(formData.get("neck")),
+					min: 15,
+					max: 150,
+					namePtBr: "pescoço",
+				},
+				waist: {
+					value: parseFloat(formData.get("waist")),
+					min: 20,
+					max: 300,
+					namePtBr: "cintura",
+				},
+				hip: {
+					value: parseFloat(formData.get("hip")),
+					min: 25,
+					max: 500,
+					namePtBr: "quadril",
+				},
+			};
+
+			for (const [fieldId, rules] of Object.entries(schema)) {
+				if (fieldId === "sex") continue;
+				if (schema.sex.value === "masculine" && fieldId === "hip") continue;
+
+				const [hasError, errorMessage] = numInputErrorHandling(
+					rules.namePtBr,
+					rules.value,
+					rules.min,
+					rules.max,
+				);
+
+				if (hasError) {
+					const errorDOM = document.getElementById(fieldId);
+					showErrorToClient(errCont, errorDOM, errorMessage);
+					return true;
+				}
+			}
+
 			const sex = formData.get("sex");
 			const height = parseFloat(formData.get("height"));
 			const neck = parseFloat(formData.get("neck"));
 			const waist = parseFloat(formData.get("waist"));
 			const rawHip = formData.get("hip");
-
 			const hip = rawHip ? parseFloat(rawHip) : 0;
 
 			const bodyFat = getBodyFat(sex, height, neck, waist, hip);

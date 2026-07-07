@@ -20,6 +20,7 @@ export function initCalcController() {
 		pageTitle.innerText = activeConfig.title;
 		pageDesc.innerText = activeConfig.subtitle;
 		form.innerHTML = activeConfig.inputs();
+		document.title = `${activeConfig.title} | Bunnit`;
 
 		if (typeof activeConfig.setupListeners === "function") {
 			activeConfig.setupListeners(form);
@@ -42,6 +43,8 @@ export function initCalcController() {
 				resultContainer.innerHTML = result
 					.map((text) => `<p>${text}</p>`)
 					.join("");
+
+				this.reset();
 			}
 		}
 	});
