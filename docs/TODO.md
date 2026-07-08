@@ -1,40 +1,57 @@
-# TODO
+# TODO & Roadmap: Bunnit Project
 
-This is the development roadmap for the Bunnit project, focusing on engineering Vanilla JS features and clean architecture.
+This is the development roadmap for the **Bunnit** project, an engineering-focused Vanilla JS application built with clean architecture principles. This document outlines the upcoming features, calculator modules, and core technical enhancements categorized by their production readiness and strategic importance.
 
-## Features
+## Priority Definitions
 
-* [ ] FAQ Section at the Bottom of index
-* [ ] Information about the calculator under the calculator box
-  * [ ] What the formula is
-  * [ ] Since then it exists and short history
-  * [ ] Information about the benefits of using it
-* [ ] Theme Switcher (Dark/Light Mode)
-* [ ] Add a testing suite (like Jest)
-* [ ] Unit Toggle System (Metric vs. Imperial)
-* [ ] Show same category calculators in the aside
-* [ ] Add JSdoc to the files
-* [ ] SCSS for radio buttons (including error design)
+* 🟢 **HIGH:** Complete these before going to production.
+* 🟡 **MEDIUM:** Essential enhancements that can be deployed post-production but should be resolved *as soon as possible*.
+* 🔵 **LOW:** Non-blocking nice-to-haves, calculator additions, or deeper documentation.
 
-### Calculator Ideas
+---
 
-* [ ] Health & Body Composition
-  * [x] Body Mass Index (BMI)
-  * [x] Body Fat Percentage (U.S. Navy Method)
-  * [ ] Lean Mass
-* [ ] Nutrition & Diet
-  * [ ] Daily Energy Expenditure (TDEE)
-  * [ ] Ideal Water Consumption
-* [ ] Workout
-  * [ ] 1RM (One Repetition Maximum) calculator for strength training
-* [ ] Change the navbar to (Health | Nutrition | Workout)
+## Core Features & Architecture
 
-## Fixes & Refactoring
+* [ ] **HIGH:** SCSS for radio buttons (including error design).
+* [ ] **HIGH:** Unit Toggle System (Metric vs. Imperial).
+* [ ] **HIGH:** Include rich formula metadata in `calcConfig.js` (for display in `calculator.html`):
+  * what the formula is;
+  * its history;
+  * the benefits of using it.
+* [ ] **HIGH:** Change the navbar structure to (Health | Nutrition | Workout).
+* [ ] **MEDIUM:** Theme Switcher (Dark/Light Mode).
+* [ ] **MEDIUM:** Add JSdoc to the codebase files.
+* [ ] **MEDIUM:** Add a robust testing suite (e.g., Jest).
+* [ ] **LOW:** FAQ Section at the bottom of `index.html`.
+* [ ] **LOW:** Show same-category calculators in the aside sidebar.
 
-* [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
-* [ ] Introduce a presentation layer or utility function to handle formatting and HTML templating of results
-* [ ] Add aria labels to hidden fields
-* [ ] Create a function to handle which DOM element is missing in `calcController.js`
+---
+
+## Calculator Roadmap
+
+### Health & Body Composition
+
+* [x] *COMPLETED:* Body Mass Index (BMI).
+* [x] *COMPLETED:* Body Fat Percentage (U.S. Navy Method).
+* [ ] **MEDIUM:** Lean Mass Calculator.
+
+### Nutrition & Diet
+
+* [ ] **MEDIUM:** Daily Energy Expenditure (TDEE) Calculator.
+* [ ] **LOW:** Ideal Water Consumption Calculator.
+
+### Workout
+
+* [ ] **MEDIUM:** 1RM (One Repetition Maximum) Calculator for Strength Training.
+
+---
+
+## Fixes, Refactoring & Stability
+
+* [ ] **HIGH:** Handle 404 behavior when an invalid query string is passed in `window.location.search`.
+* [ ] **HIGH:** Create a utility function to identify which DOM element is missing in `calcController.js`.
+* [ ] **MEDIUM:** Introduce a presentation layer or utility function to handle formatting and HTML templating of results.
+* [ ] **MEDIUM:** Add ARIA labels to hidden fields and interactive elements.
 
 ## DONE
 
