@@ -8,7 +8,7 @@
 @use "Footer";
 
 // * ========================================
-// * STYLES
+// * MOBILE/GENERAL STYLES
 // * ========================================
 .content-intro {
 	&__title {
@@ -44,7 +44,6 @@
 	&__label {
 		display: block;
 		padding: 0;
-		float: left;
 	}
 
 	&__text-input {
@@ -127,6 +126,10 @@
 		margin: v.$margin-small;
 	}
 }
+
+// * ========================================
+// * DESKTOP STYLES
+// * ========================================
 
 @media (min-width: v.$screen-breakpoint-medium) {
 	.content-wrapper {

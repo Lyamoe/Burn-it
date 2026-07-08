@@ -10,7 +10,6 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
   * [ ] Since then it exists and short history
   * [ ] Information about the benefits of using it
 * [ ] Theme Switcher (Dark/Light Mode)
-* [ ] Save user metrics in localStorage so they don't have to re-enter them.
 * [ ] Add a testing suite (like Jest)
 * [ ] Unit Toggle System (Metric vs. Imperial)
 * [ ] Change the calculator's image (over it) per topic
@@ -35,6 +34,7 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 
 * [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
 * [ ] Introduce a presentation layer or utility function to handle formatting and HTML templating of results
+* [ ] Add aria labels to hidden fields
 
 ## DONE
 
