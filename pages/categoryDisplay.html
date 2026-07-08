@@ -19,10 +19,12 @@
 			content="https://lyamoe.github.io/Bunnit/assets/images/bunnit-logo.jpg"
 		/>
 
-		<title>Calculadoras de saúde | Bunnit</title>
+		<title>Calculadoras de Saúde e Fitness Grátis | Bunnit</title>
 
 		<link rel="canonical" href="https://lyamoe.github.io/Bunnit/" />
-		<link rel="stylesheet" href="../styles/css/calculator.css" />
+		<link rel="stylesheet" href="../styles/css/category.css" />
+		<link rel="stylesheet" href="../styles/css/index.css" />
+		<!--TODO: Remove this later-->
 	</head>
 	<body>
 		<!-- * ======================================== -->
@@ -35,71 +37,44 @@
 			<nav>
 				<ul class="header__nav">
 					<li class="header__item">
-						<a class="header__link" href="./categoryDisplay.html?cat=health">Saúde</a>
+						<a
+							class="header__link"
+							href="./categoryDisplay.html?cat=health"
+							>Saúde</a
+						>
 					</li>
 					<li class="header__item">
-						<a class="header__link" href="./categoryDisplay.html?cat=nutrition">Nutrição</a>
+						<a
+							class="header__link"
+							href="./categoryDisplay.html?cat=nutrition"
+							>Nutrição</a
+						>
 					</li>
 					<li class="header__item">
-						<a class="header__link" href="./categoryDisplay.html?cat=workout">Exercício</a>
+						<a
+							class="header__link"
+							href="./categoryDisplay.html?cat=workout"
+							>Exercício</a
+						>
 					</li>
 				</ul>
 			</nav>
 		</header>
-		<div class="calculator-banner">
-			<img
-				src="../assets/images/bmi-banner.jpg"
-				alt="Imagem ilustrativa de uma pessoa subindo em uma balança de peso"
-				class="calculator-banner__image"
-			/>
-		</div>
 
 		<!-- * ======================================== -->
 		<!-- * MAIN -->
 		<!-- * ======================================== -->
 		<main class="content-wrapper">
-			<div>
-				<section class="content-intro">
-					<h1 class="content-intro__title">Carregando a calculadora</h1>
-					<p class="content-intro__text">
-						Em breve, você poderá acessar uma de nossas diversas calculadoras.
-						Só mais um minuto...
-					</p>
-				</section>
-
-				<section class="calculator">
-					<form
-						class="calculator__form"
-						id="calculator__form"
-						novalidate
-					></form>
-					<div
-						class="calculator__error-box calculator__error-box--hidden"
-					></div>
-					<div class="calculator__results"></div>
-				</section>
+			<div class="hero">
+				<h1 class="hero__title">Calculadoras de Saúde</h1>
+				<p class="hero__subtitle">
+					Diversas formas de checar seu bem estar corporal
+				</p>
 			</div>
 
-			<!-- * ======================================== -->
-			<!-- * ASIDE -->
-			<!-- * ======================================== -->
-
-			<aside class="related-info">
-				<h2 class="related-info__title">Relacionados</h2>
-				<a class="related-info__card" href="./calculator.html?calc=bodyfat">
-					<img
-						src="../assets/images/bodyfat-banner.jpg"
-						alt="Uma banana enrolada em uma fita métrica"
-						class="related-info__image"
-					/>
-					<h3 class="related-info__card-title">
-						Porcentagem de Gordura Corporal
-					</h3>
-					<p class="related-info__description">
-						Descubra a porcentagem de gordura em seu corpo.
-					</p>
-				</a>
-			</aside>
+			<!-- * ---------- Link das calculadoras ---------- -->
+			<section class="link-box">
+			</section>
 		</main>
 
 		<!-- * ======================================== -->
@@ -121,10 +96,9 @@
 				>
 			</address>
 		</footer>
-
 		<script type="module">
-			import { initCalcController } from "../scripts/calculator/calcController.js";
-			document.addEventListener("DOMContentLoaded", initCalcController);
+			import { initCatController } from "../scripts/categories/catController.js";
+			document.addEventListener("DOMContentLoaded", initCatController);
 		</script>
 	</body>
 </html>

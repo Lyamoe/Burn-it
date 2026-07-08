@@ -28,7 +28,7 @@ export function initCalcController() {
 
 	if (activeConfig) {
 		pageTitle.innerText = activeConfig.title;
-		pageDesc.innerText = activeConfig.subtitle;
+		pageDesc.innerText = activeConfig.desc;
 		form.innerHTML = activeConfig.inputs();
 		document.title = `${activeConfig.title} | Bunnit`;
 		bannerImageDiv.innerHTML = `<img

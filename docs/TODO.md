@@ -17,7 +17,7 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
   * what the formula is;
   * its history;
   * the benefits of using it.
-* [ ] **HIGH:** Change the navbar structure to (Health | Nutrition | Workout).
+* [ ] **HIGH:** Move calculator list to `categoryDisplay.html`.
 * [ ] **MEDIUM:** Theme Switcher (Dark/Light Mode).
 * [ ] **MEDIUM:** Add JSdoc to the codebase files.
 * [ ] **LOW:** FAQ Section at the bottom of `index.html`.
@@ -73,3 +73,5 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 * [x] Change the calculator-banner__image to match the topic.
 * [x] SCSS for radio buttons.
 * [x] Add a robust testing suite (Jest).
+* [x] Change the navbar structure to (Health | Nutrition | Workout).
+* [x] Add `class="header__link--active"` and `aria-current="page"` in nav when a calc of said category is open

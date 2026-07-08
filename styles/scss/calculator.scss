@@ -17,6 +17,12 @@
 		margin: v.$margin-large 0;
 	}
 }
+.calculator-banner__image {
+	height: 10rem;
+	width: 100%;
+	background-size: cover;
+	object-fit: cover;
+}
 
 .calculator {
 	background-color: v.$l-theme-box-background;

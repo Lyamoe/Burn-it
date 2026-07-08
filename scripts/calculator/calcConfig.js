@@ -4,10 +4,12 @@ import { getBmi, getBodyFat, numInputErrorHandling } from "./calcService.js";
 export const CalculatorConfigs = {
 	bmi: {
 		title: "Índice de Massa Corporal (IMC)",
-		subtitle:
+		subtitle: "Descobra sua categoria com base em altura e peso",
+		desc:
 			"O cálculo do índice de massa corporal (IMC) é uma ferramenta simples e rápida para avaliar se uma pessoa está com o peso ideal em relação à sua altura.",
 		imageAlt:
 			"Imagem ilustrativa de uma pessoa subindo em uma balança de peso.",
+		category: "health",
 		inputs: () =>
 			inputsDOM.number({ id: "weight", label: "Peso (kg)", step: "0.1" }) +
 			inputsDOM.number({ id: "height", label: "Altura (cm)", step: "1" }) +
@@ -60,9 +62,11 @@ export const CalculatorConfigs = {
 
 	bodyfat: {
 		title: "Percentual de Gordura Corporal",
-		subtitle:
+		subtitle: "Calcule a gordura em seu corpo",
+		desc:
 			"Calcular o percentual de gordura corporal ajuda a alcançar um corpo saudável. De acordo com o Conselho Americano de Exercício, o recomendado para mulheres é 14 a 31% enquanto para homens é de 6 a 24%.",
 		imageAlt: "Imagem ilustrativa de uma banana enrolada em uma fita métrica.",
+		category: "health",
 		inputs: () =>
 			inputsDOM.radio({
 				id: "sex",
