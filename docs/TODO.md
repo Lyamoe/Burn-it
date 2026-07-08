@@ -4,7 +4,7 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 
 ## Priority Definitions
 
-* 🟢 **HIGH:** Complete these before going to production.
+* 🔴 **HIGH:** Complete these before going to production.
 * 🟡 **MEDIUM:** Essential enhancements that can be deployed post-production but should be resolved *as soon as possible*.
 * 🔵 **LOW:** Non-blocking nice-to-haves, calculator additions, or deeper documentation.
 
@@ -12,7 +12,6 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 
 ## Core Features & Architecture
 
-* [ ] **HIGH:** SCSS for radio buttons (including error design).
 * [ ] **HIGH:** Unit Toggle System (Metric vs. Imperial).
 * [ ] **HIGH:** Include rich formula metadata in `calcConfig.js` (for display in `calculator.html`):
   * what the formula is;
@@ -21,7 +20,6 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 * [ ] **HIGH:** Change the navbar structure to (Health | Nutrition | Workout).
 * [ ] **MEDIUM:** Theme Switcher (Dark/Light Mode).
 * [ ] **MEDIUM:** Add JSdoc to the codebase files.
-* [ ] **MEDIUM:** Add a robust testing suite (e.g., Jest).
 * [ ] **LOW:** FAQ Section at the bottom of `index.html`.
 * [ ] **LOW:** Show same-category calculators in the aside sidebar.
 
@@ -55,21 +53,23 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 
 ## DONE
 
-* [x] Add a Navigation Bar (Home | About | Contact)
-* [x] A Hero Section Subtitle or Intro
-* [x] "How it Works" Section
-* [x] Robust Form Validation (e.g., prevent height greater than 3 meters or zero weight)
-* [x] Separate logic layer from UI layer
-* [x] Eliminate the 48px magic number in_Common.scss (content-wrapper)
-* [x] Separate color palette from functional varibles
-* [x] Results must be hidden after the user presses calculate again
-* [x] Use the same HTML to all calculators
-* [x] Break the circular dependency loop between `calcController.js` and `calcOptions.js`
-* [x] Refactor `resetStyles()` to query inputs *only* within the active form
-* [x] Replace the rigid string interpolation in `inputsDOM` with a scalable pattern
-* [x] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects (e.g., via `FormData`)
-* [x] Refactor `CalculatorConfigs` so that `calculate` returns raw results instead of DOM
-* [x] Implement a mechanism to handle conditional field display
-* [x] Move Body Fat calculations and input error handling into `calcService.js`
-* [x] Edit meta tags in `index.html` and `calculator.html`
-* [x] Change the calculator-banner__image to match the topic
+* [x] Add a Navigation Bar (Home | About | Contact).
+* [x] A Hero Section Subtitle or Intro.
+* [x] "How it Works" Section.
+* [x] Robust Form Validation (e.g., prevent height greater than 3 meters or zero weight).
+* [x] Separate logic layer from UI layer.
+* [x] Eliminate the 48px magic number in_Common.scss (content-wrapper).
+* [x] Separate color palette from functional varibles.
+* [x] Results must be hidden after the user presses calculate again.
+* [x] Use the same HTML to all calculators.
+* [x] Break the circular dependency loop between `calcController.js` and `calcOptions.js`.
+* [x] Refactor `resetStyles()` to query inputs *only* within the active form.
+* [x] Replace the rigid string interpolation in `inputsDOM` with a scalable pattern.
+* [x] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects via FormData.
+* [x] Refactor `CalculatorConfigs` so that `calculate` returns raw results instead of DOM.
+* [x] Implement a mechanism to handle conditional field display.
+* [x] Move Body Fat calculations and input error handling into `calcService.js`.
+* [x] Edit meta tags in `index.html` and `calculator.html`.
+* [x] Change the calculator-banner__image to match the topic.
+* [x] SCSS for radio buttons.
+* [x] Add a robust testing suite (Jest).
