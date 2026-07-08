@@ -6,9 +6,19 @@ export function initCalcController() {
 	const errorContainer = document.querySelector(".calculator__error-box");
 	const pageTitle = document.querySelector(".content-intro__title");
 	const pageDesc = document.querySelector(".content-intro__text");
+	const bannerImageDiv = document.querySelector(".calculator-banner");
 
-	if (!form || !resultContainer || !errorContainer || !pageTitle || !pageDesc) {
-		console.error("One of the key DOM components for the BMI results are missing.");
+	if (
+		!form ||
+		!resultContainer ||
+		!errorContainer ||
+		!pageTitle ||
+		!pageDesc ||
+		!bannerImageDiv
+	) {
+		console.error(
+			"One of the key DOM components for the calculator results are missing.",
+		);
 		return;
 	}
 
@@ -21,6 +31,11 @@ export function initCalcController() {
 		pageDesc.innerText = activeConfig.subtitle;
 		form.innerHTML = activeConfig.inputs();
 		document.title = `${activeConfig.title} | Bunnit`;
+		bannerImageDiv.innerHTML = `<img
+				src="../assets/images/${currentCalc}-banner.jpg"
+				alt="${activeConfig.imageAlt}"
+				class="calculator-banner__image"
+			/>`;
 
 		if (typeof activeConfig.setupListeners === "function") {
 			activeConfig.setupListeners(form);
@@ -37,7 +52,11 @@ export function initCalcController() {
 
 		if (activeConfig) {
 			// We pass showErrorToClient context so the config block can use it if needed
-			const result = activeConfig.calculate(errorContainer, formData, showErrorToClient);
+			const result = activeConfig.calculate(
+				errorContainer,
+				formData,
+				showErrorToClient,
+			);
 
 			if (result !== true) {
 				resultContainer.innerHTML = result

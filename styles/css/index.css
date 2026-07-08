@@ -242,7 +242,7 @@ footer {
   flex-grow: 1;
 }
 
-.context-image {
+.calculator-banner__image {
   height: 10rem;
   width: 100%;
   background-size: cover;

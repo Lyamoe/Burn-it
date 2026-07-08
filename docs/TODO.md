@@ -12,7 +12,6 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [ ] Theme Switcher (Dark/Light Mode)
 * [ ] Add a testing suite (like Jest)
 * [ ] Unit Toggle System (Metric vs. Imperial)
-* [ ] Change the calculator's image (over it) per topic
 * [ ] Show same category calculators in the aside
 * [ ] Add JSdoc to the files
 * [ ] SCSS for radio buttons (including error design)
@@ -35,6 +34,7 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [ ] Handle 404 behavior when an invalid query string is passed in `window.location.search`
 * [ ] Introduce a presentation layer or utility function to handle formatting and HTML templating of results
 * [ ] Add aria labels to hidden fields
+* [ ] Create a function to handle which DOM element is missing in `calcController.js`
 
 ## DONE
 
@@ -55,3 +55,4 @@ This is the development roadmap for the Bunnit project, focusing on engineering 
 * [x] Implement a mechanism to handle conditional field display
 * [x] Move Body Fat calculations and input error handling into `calcService.js`
 * [x] Edit meta tags in `index.html` and `calculator.html`
+* [x] Change the calculator-banner__image to match the topic

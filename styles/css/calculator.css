@@ -242,7 +242,7 @@ footer {
   flex-grow: 1;
 }
 
-.context-image {
+.calculator-banner__image {
   height: 10rem;
   width: 100%;
   background-size: cover;
@@ -332,7 +332,6 @@ footer {
 .calculator__label {
   display: block;
   padding: 0;
-  float: left;
 }
 .calculator__text-input {
   border: 1px solid #ffaf7a;
