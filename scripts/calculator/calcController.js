@@ -7,6 +7,7 @@ export function initCalcController() {
 	const pageTitle = document.querySelector(".content-intro__title");
 	const pageDesc = document.querySelector(".content-intro__text");
 	const bannerImageDiv = document.querySelector(".calculator-banner");
+	const article = document.querySelector(".article");
 
 	if (
 		!form ||
@@ -14,7 +15,8 @@ export function initCalcController() {
 		!errorContainer ||
 		!pageTitle ||
 		!pageDesc ||
-		!bannerImageDiv
+		!bannerImageDiv ||
+		!article
 	) {
 		console.error(
 			"One of the key DOM components for the calculator results are missing.",
@@ -36,6 +38,18 @@ export function initCalcController() {
 				alt="${activeConfig.imageAlt}"
 				class="calculator-banner__image"
 			/>`;
+
+		let articleText = `<h2>Sobre o Cálculo</h2>`;
+
+		for (let i = 0; i < activeConfig.article.length; i++) {
+			const block = activeConfig.article[i];
+			articleText += `<section class="article__text-block">
+        	    <h3>${block.title}</h3>
+        		<p>${block.text}</p>
+    		</section>`;
+		}
+
+		article.innerHTML = articleText;
 
 		if (typeof activeConfig.setupListeners === "function") {
 			activeConfig.setupListeners(form);
