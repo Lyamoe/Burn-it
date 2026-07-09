@@ -50,28 +50,3 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 * [ ] **HIGH:** Create a utility function to identify which DOM element is missing in `calcController.js`.
 * [ ] **MEDIUM:** Introduce a presentation layer or utility function to handle formatting and HTML templating of results.
 * [ ] **MEDIUM:** Add ARIA labels to hidden fields and interactive elements.
-
-## DONE
-
-* [x] Add a Navigation Bar (Home | About | Contact).
-* [x] A Hero Section Subtitle or Intro.
-* [x] "How it Works" Section.
-* [x] Robust Form Validation (e.g., prevent height greater than 3 meters or zero weight).
-* [x] Separate logic layer from UI layer.
-* [x] Eliminate the 48px magic number in_Common.scss (content-wrapper).
-* [x] Separate color palette from functional varibles.
-* [x] Results must be hidden after the user presses calculate again.
-* [x] Use the same HTML to all calculators.
-* [x] Break the circular dependency loop between `calcController.js` and `calcOptions.js`.
-* [x] Refactor `resetStyles()` to query inputs *only* within the active form.
-* [x] Replace the rigid string interpolation in `inputsDOM` with a scalable pattern.
-* [x] Refactor `CalculatorConfigs` so that `calculate` receives plain data objects via FormData.
-* [x] Refactor `CalculatorConfigs` so that `calculate` returns raw results instead of DOM.
-* [x] Implement a mechanism to handle conditional field display.
-* [x] Move Body Fat calculations and input error handling into `calcService.js`.
-* [x] Edit meta tags in `index.html` and `calculator.html`.
-* [x] Change the calculator-banner__image to match the topic.
-* [x] SCSS for radio buttons.
-* [x] Add a robust testing suite (Jest).
-* [x] Change the navbar structure to (Health | Nutrition | Workout).
-* [x] Add `class="header__link--active"` and `aria-current="page"` in nav when a calc of said category is open
