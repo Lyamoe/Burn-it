@@ -4,8 +4,8 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 
 ## Priority Definitions
 
-* 🔴 **HIGH:** Complete these before going to production.
-* 🟡 **MEDIUM:** Essential enhancements that can be deployed post-production but should be resolved *as soon as possible*.
+* 🔴 **HIGH:** Core features or heavily important features that affect the user.
+* 🟡 **MEDIUM:** Essential enhancements that aren't urgent but should be resolved *as soon as possible*.
 * 🔵 **LOW:** Non-blocking nice-to-haves, calculator additions, or deeper documentation.
 
 ---
@@ -13,10 +13,6 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 ## Core Features & Architecture
 
 * [ ] **HIGH:** Unit Toggle System (Metric vs. Imperial).
-* [ ] **HIGH:** Include rich formula metadata in `calcConfig.js` (for display in `calculator.html`):
-  * what the formula is;
-  * its history;
-  * the benefits of using it.
 * [ ] **HIGH:** Move calculator list to `categoryDisplay.html`.
 * [ ] **MEDIUM:** Theme Switcher (Dark/Light Mode).
 * [ ] **MEDIUM:** Add JSdoc to the codebase files.

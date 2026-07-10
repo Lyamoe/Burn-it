@@ -1,4 +1,5 @@
-// inputDOM.js
+// * Input templates that can be used on forms
+
 export const inputsDOM = {
 	submit: () => `
 		<button type="submit" class="calculator__submit">

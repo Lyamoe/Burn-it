@@ -1,3 +1,5 @@
+// * Object of each calculator goes here, with its functions and text from calcTextContent.js
+
 import { inputsDOM } from "./inputDOM.js";
 import { getBmi, getBodyFat, numInputErrorHandling } from "./calcService.js";
 import { CalculatorContent } from "./calcTextContent.js";
