@@ -1,0 +1,354 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  background-color: #fffdfc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f0f0f;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+.content-wrapper {
+  padding: 0 5vw;
+  max-width: 1800px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding: 0 10vw;
+  }
+}
+.header {
+  background-color: #1d3354;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 60px;
+  margin: 0;
+  color: #fffdfc;
+}
+.header__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header__nav .header__link:hover {
+  color: #ee2c32;
+}
+.header__link {
+  text-decoration: none;
+  color: #e9fff9;
+}
+.header__link--active {
+  color: #ee2c32;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ee2c32;
+}
+
+@media (min-width: 576px) {
+  .header {
+    padding: 0 10vw;
+  }
+}
+.footer {
+  background-color: #1d3354;
+  height: 100px;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #fffdfc;
+}
+.footer__link, .footer__email {
+  color: #e9fff9;
+}
+
+.hero {
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../../assets/images/index-hero-calculator.jpg") no-repeat center center/cover;
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+.hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #145d96;
+}
+.hero__subtitle {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.link-box {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .link-box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.link-box__item {
+  text-align: center;
+}
+.link-box__title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.link-box__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: #0f0f0f;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid #1d3354;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.link-box__link:hover {
+  background-color: #1d3354;
+  color: #e9fff9;
+}
+.link-box__text {
+  font-size: 0.8rem;
+}

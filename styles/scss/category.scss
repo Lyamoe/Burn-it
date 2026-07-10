@@ -1,0 +1,71 @@
+// * ========================================
+// * IMPORTS
+// * ========================================
+@use "Reset";
+@use "Variables" as v;
+@use "Common";
+@use "Header";
+@use "Footer";
+
+// * ========================================
+// * STYLES
+// * ========================================
+
+.hero {
+	background:
+		linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+		url("../../assets/images/index-hero-calculator.jpg") no-repeat center center / cover;
+	text-align: center;
+    width: 100%;
+	padding: v.$padding-medium;
+	margin: v.$margin-large 0;
+
+	&__title {
+		font-size: v.$font-size-title;
+		font-weight: v.$font-weight-bold;
+		margin-bottom: v.$margin-medium;
+		color: v.$l-theme-secondary;
+	}
+
+	&__subtitle {
+		font-size: v.$font-size-medium;
+		margin-top: v.$margin-small;
+	}
+}
+
+.link-box {
+	@include v.custom-grid(4);
+
+	&__item {
+		text-align: center;
+	}
+
+	&__title {
+		font-size: v.$font-size-medium;
+		margin-bottom: v.$margin-small;
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		color: v.$text-black;
+		text-decoration: none;
+		padding: v.$padding-small;
+		border: v.$border-thin v.$l-theme-primary;
+		border-radius: v.$border-radius-small;
+		transition:
+			background-color v.$smooth-transition,
+			color v.$smooth-transition;
+
+		&:hover {
+			background-color: v.$l-theme-primary;
+			color: v.$l-theme-text-soft-highlight;
+		}
+	}
+
+	&__text {
+		font-size: v.$font-size-small;
+	}
+}

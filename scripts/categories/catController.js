@@ -2,10 +2,11 @@ import { CalculatorConfigs } from "../calculator/calcConfig.js";
 
 export function initCatController() {
 	const calcBox = document.querySelector(".link-box");
+	const pageTitle = document.querySelector(".hero__title");
 
-	if (!calcBox) {
+	if (!calcBox || !pageTitle) {
 		console.error(
-			"Javascript failed to find the calculator links box.",
+			"Javascript failed to find the link box or title.",
 		);
 		return;
 	}
@@ -14,6 +15,9 @@ export function initCatController() {
 	const currentCat = urlParams.get("cat");
 
 	changeNavActive(currentCat);
+
+	const catName = getCatNamePtBr(currentCat);
+	pageTitle.innerText = `Calculadoras de ${catName}`;
 
 	Object.entries(CalculatorConfigs).forEach(([key, calculator]) => {
 		console.log(calculator.category + " and " + currentCat);
@@ -45,6 +49,22 @@ export function changeNavActive(cat) {
 		return;
 	}
 
+	const catNamePtBr = getCatNamePtBr(cat);
+
+	headerLinks.forEach((linkDOM) => {
+		if (linkDOM.innerText === catNamePtBr) {
+			linkDOM.classList.add("header__link--active");
+			linkDOM.setAttribute("aria-current", "page");
+		} else {
+			linkDOM.classList.remove("header__link--active");
+			linkDOM.removeAttribute("aria-current");
+		}
+	});
+
+	return catNamePtBr;
+}
+
+function getCatNamePtBr(cat) {
 	let catNamePtBr;
 
 	switch (cat) {
@@ -61,13 +81,5 @@ export function changeNavActive(cat) {
 			break;
 	}
 
-	headerLinks.forEach((linkDOM) => {
-		if (linkDOM.innerText === catNamePtBr) {
-			linkDOM.classList.add("header__link--active");
-			linkDOM.setAttribute("aria-current", "page");
-		} else {
-			linkDOM.classList.remove("header__link--active");
-			linkDOM.removeAttribute("aria-current");
-		}
-	});
+	return catNamePtBr;
 }
