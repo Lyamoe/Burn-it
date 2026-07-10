@@ -36,6 +36,9 @@
 
 	&__item {
 		text-align: center;
+		// 1. Turn the item into a column flexbox so its children can stretch
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__title {
@@ -45,7 +48,12 @@
 	}
 
 	&__link {
-		display: block;
+		// 2. Change this to flex or keep block, but add height: 100%
+		display: flex;
+		flex-direction: column;
+		justify-content: center; // Centers text vertically if they are different heights
+		height: 100%; 
+		
 		color: v.$text-black;
 		text-decoration: none;
 		padding: v.$padding-medium;

@@ -1,3 +1,4 @@
+import { changeNavActive } from "../categories/catController.js";
 import { CalculatorConfigs } from "./calcConfig.js";
 
 export function initCalcController() {
@@ -38,14 +39,15 @@ export function initCalcController() {
 				alt="${activeConfig.imageAlt}"
 				class="calculator-banner__image"
 			/>`;
+			changeNavActive(activeConfig.category);
 
-		let articleText = `<h2>Sobre o Cálculo</h2>`;
+		let articleText = `<h2 class="article__title">Sobre o Cálculo</h2>`;
 
 		for (let i = 0; i < activeConfig.article.length; i++) {
 			const block = activeConfig.article[i];
 			articleText += `<section class="article__text-block">
-        	    <h3>${block.title}</h3>
-        		<p>${block.text}</p>
+        	    <h3 class="article__subtitle">${block.title}</h3>
+        		<p class="article__parag">${block.text}</p>
     		</section>`;
 		}
 
@@ -65,7 +67,6 @@ export function initCalcController() {
 		resetStyles(errorContainer, resultContainer, this);
 
 		if (activeConfig) {
-			// We pass showErrorToClient context so the config block can use it if needed
 			const result = activeConfig.calculate(
 				errorContainer,
 				formData,
