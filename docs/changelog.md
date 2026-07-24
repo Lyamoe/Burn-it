@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created `categoryDisplay.html` to showcase specific calculators.
 - Integrated Jest testing framework into the project.
 - Included formula metadata in `calcTextContent.js` (for display in `calculator.html`).
+- Same category calculators being shows in `calculator.html` aside.
 
 ### Changed
 

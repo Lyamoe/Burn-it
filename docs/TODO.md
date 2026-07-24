@@ -17,7 +17,6 @@ This is the development roadmap for the **Bunnit** project, an engineering-focus
 * [ ] **MEDIUM:** Theme Switcher (Dark/Light Mode).
 * [ ] **MEDIUM:** Add JSdoc to the codebase files.
 * [ ] **LOW:** FAQ Section at the bottom of `index.html`.
-* [ ] **LOW:** Show same-category calculators in the aside sidebar.
 
 ---
 
