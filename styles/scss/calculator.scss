@@ -97,6 +97,16 @@
 			display: none;
 		}
 	}
+
+	&__results {
+		text-align: center;
+		font-size: v.$font-size-medium;
+		font-weight: v.$font-weight-bold;
+		color: v.$l-theme-secondary;
+		padding: v.$padding-small 0;
+		border: v.$border-thin v.$l-theme-secondary;
+		background-color: v.$background-white;
+	}
 }
 
 .article {

@@ -375,6 +375,15 @@ footer {
 .calculator__error-box--hidden {
   display: none;
 }
+.calculator__results {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #145d96;
+  padding: 1rem 0;
+  border: 1px solid #145d96;
+  background-color: #fffdfc;
+}
 
 .article__title {
   font-size: 2rem;
