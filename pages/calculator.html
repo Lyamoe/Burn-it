@@ -108,19 +108,7 @@
 
 			<aside class="related-info">
 				<h2 class="related-info__title">Relacionados</h2>
-				<a class="related-info__card" href="./calculator.html?calc=bodyfat">
-					<img
-						src="../assets/images/bodyfat-banner.jpg"
-						alt="Uma banana enrolada em uma fita métrica"
-						class="related-info__image"
-					/>
-					<h3 class="related-info__card-title">
-						Porcentagem de Gordura Corporal
-					</h3>
-					<p class="related-info__description">
-						Descubra a porcentagem de gordura em seu corpo.
-					</p>
-				</a>
+				<!--? Cards are added using javascript -->
 			</aside>
 		</main>
 
@@ -146,7 +134,9 @@
 
 		<script type="module">
 			import { initCalcController } from "../scripts/calculator/calcController.js";
+			import { initAsideController } from "../scripts/calculator/asideController.js";
 			document.addEventListener("DOMContentLoaded", initCalcController);
+			document.addEventListener("DOMContentLoaded", initAsideController);
 		</script>
 	</body>
 </html>

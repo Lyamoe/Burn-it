@@ -117,17 +117,6 @@
 	}
 }
 
-
-// let articleText = `<h2 class="article__title">Sobre o Cálculo</h2>`;
-
-// 		for (let i = 0; i < activeConfig.article.length; i++) {
-// 			const block = activeConfig.article[i];
-// 			articleText += `<section class="article__text-block">
-//         	    <h3 class="article__subtitle">${block.title}</h3>
-//         		<p class="article__parag">${block.text}</p>
-//     		</section>`;
-// 		}
-
 .related-info {
 	padding: v.$padding-medium;
 
@@ -144,6 +133,7 @@
 		overflow: hidden;
 		text-decoration: none;
 		color: v.$text-black;
+		margin-bottom: v.$margin-medium;
 	}
 
 	&__image {

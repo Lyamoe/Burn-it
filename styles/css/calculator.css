@@ -405,6 +405,7 @@ footer {
   overflow: hidden;
   text-decoration: none;
   color: #0f0f0f;
+  margin-bottom: 1rem;
 }
 .related-info__image {
   height: 150px;
