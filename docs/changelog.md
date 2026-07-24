@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [1.1.0]
+
 ### Added
 
 - Created `categoryDisplay.html` to showcase specific calculators.
@@ -18,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated the TODO list to follow a priority-driven structure.
 - Updated category hero subtitle.
+
+---
 
 ## [1.0.0] - 2026-07-07
 
@@ -43,5 +49,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed layout behavior regarding box-hip toggling.
 - Cleared and resolved all temporary `TODO` comments embedded across codebase files.
 
-[unreleased]: https://github.com/Lyamoe/Bunnit/compare/v1.0.0...develop
+[unreleased]: https://github.com/Lyamoe/Bunnit/compare/v1.1.0...develop
+[1.1.0]: https://github.com/Lyamoe/Bunnit/releases/tag/v1.1.0
 [1.0.0]: https://github.com/Lyamoe/Bunnit/releases/tag/v1.0.0
