@@ -3,6 +3,7 @@ import { CalculatorConfigs } from "../calculator/calcConfig.js";
 export function initCatController() {
 	const calcBox = document.querySelector(".link-box");
 	const pageTitle = document.querySelector(".hero__title");
+	const pageDesc = document.querySelector(".hero__subtitle");
 
 	if (!calcBox || !pageTitle) {
 		console.error(
@@ -16,8 +17,9 @@ export function initCatController() {
 
 	changeNavActive(currentCat);
 
-	const catName = getCatNamePtBr(currentCat);
+	const [catName, catDesc] = getCatInfoPtBt(currentCat);
 	pageTitle.innerText = `Calculadoras de ${catName}`;
+	pageDesc.innerText = catDesc;
 
 	Object.entries(CalculatorConfigs).forEach(([key, calculator]) => {
 		console.log(calculator.category + " and " + currentCat);
@@ -49,7 +51,7 @@ export function changeNavActive(cat) {
 		return;
 	}
 
-	const catNamePtBr = getCatNamePtBr(cat);
+	const catNamePtBr = getCatInfoPtBt(cat);
 
 	headerLinks.forEach((linkDOM) => {
 		if (linkDOM.innerText === catNamePtBr) {
@@ -64,22 +66,28 @@ export function changeNavActive(cat) {
 	return catNamePtBr;
 }
 
-function getCatNamePtBr(cat) {
+function getCatInfoPtBt(cat) {
 	let catNamePtBr;
+	let catDescPtBr;
 
 	switch (cat) {
 		case "health":
 			catNamePtBr = "Saúde";
+			catDescPtBr = "Calculadoras planejadas para calcular como seu corpo afeta sua saúde";
 			break;
 		case "nutrition":
 			catNamePtBr = "Nutrição";
+			catDescPtBr = "Descubra como seus habitos alimentares podem melhorar seu bem-estar";
 			break;
 		case "workout":
 			catNamePtBr = "Exercício";
+			catDescPtBr = "Obtenha informações sobre seu treino e outros exercícios";
 			break;
 		default:
+			catNamePtBr = "Não encontrado"
+			catDescPtBr = "Sua busca não exibiu calculadoras. Volte para a tela inicial e escolha uma das opções disponíveis"
 			break;
 	}
 
-	return catNamePtBr;
+	return [catNamePtBr, catDescPtBr];
 }
