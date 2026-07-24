@@ -25,14 +25,8 @@ footer {
 	padding: 0 v.$container-padding-side-mobile;
 	max-width: v.$container-max-width;
 	margin: 0 auto;
+	margin-bottom: v.$margin-large;
 	flex-grow: 1;
-}
-
-.calculator-banner__image {
-	height: 10rem;
-	width: 100%;
-	background-size: cover;
-	object-fit: cover;
 }
 
 @media (min-width: v.$screen-breakpoint-medium) {

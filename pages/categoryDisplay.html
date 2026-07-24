@@ -21,10 +21,10 @@
 			content="https://lyamoe.github.io/Bunnit/assets/images/bunnit-logo.jpg"
 		/>
 
-		<title>Calculadoras de saúde | Bunnit</title>
+		<title>Calculadoras de Saúde e Fitness Grátis | Bunnit</title>
 
 		<link rel="canonical" href="https://lyamoe.github.io/Bunnit/" />
-		<link rel="stylesheet" href="../styles/css/calculator.css" />
+		<link rel="stylesheet" href="../styles/css/category.css" />
 	</head>
 	<body>
 		<!-- * ======================================== -->
@@ -34,8 +34,6 @@
 			<a href="../index.html" class="header__link">
 				<span class="header__title">Bunnit</span>
 			</a>
-			<!-- * ---------- Navbar ---------- -->
-			<!-- ? Aria current page and active class are set in a js file  -->
 			<nav>
 				<ul class="header__nav">
 					<li class="header__item">
@@ -56,60 +54,21 @@
 				</ul>
 			</nav>
 		</header>
-		<div class="calculator-banner">
-			<img
-				src="../assets/images/bmi-banner.jpg"
-				alt="Imagem ilustrativa de uma pessoa subindo em uma balança de peso"
-				class="calculator-banner__image"
-			/>
-		</div>
 
 		<!-- * ======================================== -->
 		<!-- * MAIN -->
 		<!-- * ======================================== -->
 		<main class="content-wrapper">
-			<div>
-				<section class="content-intro">
-					<!-- ? Placeholders for low loading speed -->
-					<h1 class="content-intro__title">Carregando a calculadora</h1>
-					<p class="content-intro__text">
-						Em breve, você poderá acessar uma de nossas diversas calculadoras.
-						Só mais um minuto...
-					</p>
-				</section>
-
-				<!-- * ---------- Calculator form ---------- -->
-				<section class="calculator">
-					<form
-						class="calculator__form"
-						id="calculator__form"
-						novalidate
-					></form>
-					<div
-						class="calculator__error-box calculator__error-box--hidden"
-					></div>
-					<div class="calculator__results"></div>
-				</section>
-
-				<article class="article">
-					<h2 class="article__title">Mais sobre o calculo</h2>
-
-					<!-- ? Placeholders for low loading speed -->
-					<section class="article__text-block">
-						<h3 class="article__subtitle">Sobre...</h3>
-						<p class="article__parag">Aguardando informações.</p>
-					</section>
-				</article>
+			<div class="hero">
+				<h1 class="hero__title">Carregando</h1>
+				<p class="hero__subtitle">
+					Em breve você terá acesso à nossas calculadoras
+				</p>
 			</div>
 
-			<!-- * ======================================== -->
-			<!-- * ASIDE -->
-			<!-- * ======================================== -->
-
-			<aside class="related-info">
-				<h2 class="related-info__title">Relacionados</h2>
-				<!--? Cards are added using javascript -->
-			</aside>
+			<!-- * ---------- Link das calculadoras ---------- -->
+			<!-- TODO: Add placeholders for low loading speed -->
+			<section class="link-box"></section>
 		</main>
 
 		<!-- * ======================================== -->
@@ -131,12 +90,9 @@
 				>
 			</address>
 		</footer>
-
 		<script type="module">
-			import { initCalcController } from "../scripts/calculator/calcController.js";
-			import { initAsideController } from "../scripts/calculator/asideController.js";
-			document.addEventListener("DOMContentLoaded", initCalcController);
-			document.addEventListener("DOMContentLoaded", initAsideController);
+			import { initCatController } from "../scripts/categories/catController.js";
+			document.addEventListener("DOMContentLoaded", initCatController);
 		</script>
 	</body>
 </html>

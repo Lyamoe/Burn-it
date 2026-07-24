@@ -1,20 +1,27 @@
+// * DOM controller of calculator.html
+
+import { changeNavActive } from "../categories/catController.js";
 import { CalculatorConfigs } from "./calcConfig.js";
 
 export function initCalcController() {
+	// ? Load all DOM needed and check if it was found
 	const form = document.querySelector(".calculator__form");
 	const resultContainer = document.querySelector(".calculator__results");
 	const errorContainer = document.querySelector(".calculator__error-box");
 	const pageTitle = document.querySelector(".content-intro__title");
 	const pageDesc = document.querySelector(".content-intro__text");
 	const bannerImageDiv = document.querySelector(".calculator-banner");
+	const article = document.querySelector(".article");
 
+	// TODO: better error handling here
 	if (
 		!form ||
 		!resultContainer ||
 		!errorContainer ||
 		!pageTitle ||
 		!pageDesc ||
-		!bannerImageDiv
+		!bannerImageDiv ||
+		!article
 	) {
 		console.error(
 			"One of the key DOM components for the calculator results are missing.",
@@ -22,28 +29,44 @@ export function initCalcController() {
 		return;
 	}
 
+	// * ---------- Adds content to the page ----------
 	const urlParams = new URLSearchParams(window.location.search);
 	const currentCalc = urlParams.get("calc");
 	const activeConfig = CalculatorConfigs[currentCalc];
 
 	if (activeConfig) {
-		pageTitle.innerText = activeConfig.title;
-		pageDesc.innerText = activeConfig.subtitle;
-		form.innerHTML = activeConfig.inputs();
 		document.title = `${activeConfig.title} | Bunnit`;
+		changeNavActive(activeConfig.category);
 		bannerImageDiv.innerHTML = `<img
 				src="../assets/images/${currentCalc}-banner.jpg"
 				alt="${activeConfig.imageAlt}"
 				class="calculator-banner__image"
 			/>`;
+		pageTitle.innerText = activeConfig.title;
+		pageDesc.innerText = activeConfig.desc;
+		form.innerHTML = activeConfig.inputs();
 
+		let articleText = `<h2 class="article__title">Sobre o Cálculo</h2>`;
+
+		for (let i = 0; i < activeConfig.article.length; i++) {
+			const block = activeConfig.article[i];
+			articleText += `<section class="article__text-block">
+				<h3 class="article__subtitle">${block.title}</h3>
+				<p class="article__parag">${block.text}</p>
+			</section>`;
+		}
+
+		article.innerHTML = articleText;
+
+		// ? Checks the need of listeners for dynamic inputs based on user answers
 		if (typeof activeConfig.setupListeners === "function") {
 			activeConfig.setupListeners(form);
 		}
 	} else {
-		pageTitle.innerText = "Erro na calculadora selecionada";
+		pageTitle.innerText = "Erro 404 - A calculadora selecionada não existe";
 	}
 
+	// * ----------- Form submit handler -----------
 	form.addEventListener("submit", function (e) {
 		e.preventDefault();
 		const formData = new FormData(this);
@@ -51,13 +74,13 @@ export function initCalcController() {
 		resetStyles(errorContainer, resultContainer, this);
 
 		if (activeConfig) {
-			// We pass showErrorToClient context so the config block can use it if needed
 			const result = activeConfig.calculate(
 				errorContainer,
 				formData,
 				showErrorToClient,
 			);
 
+			//? True means it found an error and already output it
 			if (result !== true) {
 				resultContainer.innerHTML = result
 					.map((text) => `<p>${text}</p>`)

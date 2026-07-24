@@ -239,15 +239,8 @@ footer {
   padding: 0 5vw;
   max-width: 1800px;
   margin: 0 auto;
+  margin-bottom: 2rem;
   flex-grow: 1;
-}
-
-.calculator-banner__image {
-  height: 10rem;
-  width: 100%;
-  background-size: cover;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 @media (min-width: 768px) {
@@ -329,6 +322,8 @@ footer {
 }
 .link-box__item {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .link-box__title {
   font-size: 1.2rem;
@@ -336,7 +331,10 @@ footer {
   transition: color 0.3s ease;
 }
 .link-box__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   color: #0f0f0f;
   text-decoration: none;
   padding: 2rem;
